@@ -3,7 +3,7 @@ export default function Header({ text, tooltip }: {
 	tooltip: string
 }) {
 	return (
-		<section className="p-10 text-center cursor-default">
+		<section className="p-10 text-center cursor-default mt-40">
 			<div className="tooltip" data-tip={tooltip}>
 				<h1 className="text-5xl font-bold">{text}</h1>
 			</div>
