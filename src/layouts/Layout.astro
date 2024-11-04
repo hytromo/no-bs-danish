@@ -1,0 +1,39 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<script is:inline>
+		try {
+			// either set the remembered user theme or use the system theme
+			// the location of this script is here in order to avoid flashing the default theme
+			const chosenTheme =
+				localStorage.getItem("theme") ||
+				(window.matchMedia("(prefers-color-scheme: dark)").matches
+					? "forest"
+					: "lemonade");
+
+			console.log(
+				"Setting theme to",
+				chosenTheme,
+				localStorage.getItem("theme"),
+			);
+			document.documentElement.setAttribute("data-theme", chosenTheme);
+		} catch (e) {
+			console.error(e);
+		}
+	</script>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Astro description" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+	<body class="bg-base-100 min-h-screen p-4">
+		<slot />
+	</body>
+</html>

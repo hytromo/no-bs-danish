@@ -1,0 +1,15 @@
+---
+import Header from "../components/Header.tsx";
+import ThemeSwitcher from "../components/ThemeSwitcher.tsx";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="You welcome!">
+	<main>
+		<ThemeSwitcher client:only="react" />
+		<Header
+			text="Opbygning af sætninger"
+			tooltip="Structure of sentences"
+		/>
+	</main>
+</Layout>
