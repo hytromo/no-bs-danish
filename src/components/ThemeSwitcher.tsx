@@ -1,12 +1,8 @@
 import { ComputerDesktopIcon, MoonIcon, SunIcon } from '@heroicons/react/24/solid';
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
+import { $currentTheme, THEMES, getSystemTheme, type ThemeType } from '../utils/theme';
 
-const getSystemTheme = () => {
-	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "forest" : "lemonade";
-	return systemTheme;
-}
-
-function ThemeButton({ theme, isSelected, setCurrentTheme, children }: { theme: string, isSelected: boolean, setCurrentTheme: (theme: string) => void, children: React.ReactNode }) {
+function ThemeButton({ theme, isSelected, setCurrentTheme, children }: { theme: ThemeType, isSelected: boolean, setCurrentTheme: (theme: ThemeType) => void, children: React.ReactNode }) {
 	return (
 		<button
 			onClick={() => {
@@ -20,29 +16,41 @@ function ThemeButton({ theme, isSelected, setCurrentTheme, children }: { theme: 
 
 
 export default function ThemeSwitcher() {
-	const [currentTheme, setCurrentTheme] = useState(() => window.localStorage.getItem("theme") || "");
+	const [selectedSwitchOption, setSelectedSwitchOption] = useState<ThemeType>(() => window.localStorage.getItem("theme") as ThemeType || "");
 
-	const setThemeWrap = (theme: string, themeToApply?: string) => {
-		setCurrentTheme(theme);
+	const setThemeWrap = (theme: ThemeType, themeToApply?: ThemeType) => {
+		$currentTheme.set(themeToApply || theme);
+		setSelectedSwitchOption(theme);
+
 		window.localStorage.setItem("theme", theme);
 		document.documentElement.setAttribute("data-theme", themeToApply || theme);
 	}
+
+	useLayoutEffect(() => {
+		if ($currentTheme.get() === "") {
+			$currentTheme.set(window.localStorage.getItem("theme") as ThemeType || getSystemTheme());
+		}
+	}, []);
 
 	return (
 		// let's send this to the right:
 		<div className="flex">
 			<div className="inline-flex ml-auto space-x-2">
-				<ThemeButton theme={"BOBOBOBO"} setCurrentTheme={() => {
-					setThemeWrap("", getSystemTheme());
-				}} isSelected={currentTheme === ""}>
+				<ThemeButton
+					theme={""}
+					setCurrentTheme={() => {
+						setThemeWrap("", getSystemTheme());
+					}}
+					isSelected={selectedSwitchOption === ""}
+				>
 					<ComputerDesktopIcon className="size-4" />
 				</ThemeButton>
 
-				<ThemeButton theme="forest" setCurrentTheme={setThemeWrap} isSelected={currentTheme === "forest"}>
+				<ThemeButton theme={THEMES.dark} setCurrentTheme={setThemeWrap} isSelected={selectedSwitchOption === THEMES.dark}>
 					<MoonIcon className='size-4' />
 				</ThemeButton>
 
-				<ThemeButton theme="lemonade" setCurrentTheme={setThemeWrap} isSelected={currentTheme === "lemonade"}>
+				<ThemeButton theme={THEMES.light} setCurrentTheme={setThemeWrap} isSelected={selectedSwitchOption === THEMES.light}>
 					<SunIcon className='size-4' />
 				</ThemeButton>
 			</div>
