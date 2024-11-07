@@ -1,14 +1,14 @@
 ---
-import Sentences from "../components/Sentence/Sentences.tsx";
-import Layout from "../layouts/Layout.astro";
+import Sentences from "../../components/Sentence/Sentences.tsx";
+import Layout from "../../layouts/Layout.astro";
 import {
 	firstFormExamples,
 	genericExamples,
 	notAloneExamples,
 	secondFormExamples,
 	secondFormExamplesStartWithSentence,
-} from "../utils/examples/hovedsætning";
-import { COLORS } from "../utils/fixedColors.ts";
+} from "../../utils/examples/hovedsætning";
+import { COLORS } from "../../utils/fixedColors.ts";
 ---
 
 <Layout
@@ -16,11 +16,6 @@ import { COLORS } from "../utils/fixedColors.ts";
 		danish: "Hovedsætning",
 		translation: "Main clause",
 	}}
-	breadcrumb={[
-		{ name: "Home", link: "/" },
-		{ name: "Opbygning af sætninger", link: "/" },
-		{ name: "Hovedsætning", link: "/Hovedsætning" },
-	]}
 >
 	<div>
 		<article class="prose max-w-none text-center mb-10">

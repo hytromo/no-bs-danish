@@ -4,18 +4,19 @@ import ThemeSwitcher from "../components/ThemeSwitcher.tsx";
 import { ViewTransitions } from "astro:transitions";
 import { Image } from "astro:assets";
 import poo from "../images/poo.svg";
+import { Breadcrumbs } from "astro-breadcrumbs";
+
+import "astro-breadcrumbs/breadcrumbs.css";
 
 interface Props {
 	title: {
 		danish: string;
 		translation: string;
 	};
-	breadcrumb: Array<{ name: string; link: string }>;
 }
 
 const {
 	title: { danish, translation },
-	breadcrumb,
 } = Astro.props;
 ---
 
@@ -94,17 +95,7 @@ const {
 				>
 			</div>
 			<div class="navbar-center hidden lg:flex">
-				<div class="breadcrumbs text-sm">
-					<ul>
-						{
-							breadcrumb.map((item) => (
-								<li>
-									<a href={`${item.link}`}>{item.name}</a>
-								</li>
-							))
-						}
-					</ul>
-				</div>
+				<Breadcrumbs />
 			</div>
 			<div class="navbar-end">
 				<ThemeSwitcher client:only="react" />

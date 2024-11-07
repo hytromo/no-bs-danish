@@ -1,11 +1,11 @@
 ---
-import Sentences from "../components/Sentence/Sentences.tsx";
-import Layout from "../layouts/Layout.astro";
+import Sentences from "../../components/Sentence/Sentences.tsx";
+import Layout from "../../layouts/Layout.astro";
 import {
 	genericExamples,
 	onlyFormExamples,
-} from "../utils/examples/ledsætning";
-import { COLORS } from "../utils/fixedColors";
+} from "../../utils/examples/ledsætning";
+import { COLORS } from "../../utils/fixedColors";
 ---
 
 <Layout
@@ -13,11 +13,6 @@ import { COLORS } from "../utils/fixedColors";
 		danish: "Ledsætning",
 		translation: "Subordinate clause",
 	}}
-	breadcrumb={[
-		{ name: "Home", link: "/" },
-		{ name: "Opbygning af sætninger", link: "/" },
-		{ name: "Ledsætning", link: "/Ledsætning" },
-	]}
 >
 	<div>
 		<article class="prose max-w-none text-center mb-10">
