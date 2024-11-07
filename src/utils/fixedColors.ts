@@ -14,5 +14,11 @@ export const COLORS = {
 	Object: {
 		class: "text-green-400",
 		hex: "#4ade80"
-	}
+	},
+	Adjective: {
+		class: "text-purple-400",
+		hex: "#a855f7"
+	},
+	MainClause: { class: "text-red-400", hex: "#F87171" },
+	SubordinateClause: { class: "text-blue-400", hex: "#60A5FA" },
 }

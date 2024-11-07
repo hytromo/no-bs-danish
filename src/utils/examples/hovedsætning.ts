@@ -244,13 +244,13 @@ export const secondFormExamplesStartWithSentence: SentencesType = [
 			danish: "Da jeg var lille, ",
 			explanation: "When I was little, ",
 			bottomExplanation: "Subordinate clause",
-			bottomColor: { class: "text-blue-400", hex: "#60A5FA" },
+			bottomColor: COLORS.SubordinateClause,
 		},
 		{
 			danish: "legede jeg med dukker",
 			explanation: "I played with dolls",
 			bottomExplanation: "Main clause - can stand alone, has inversion",
-			bottomColor: { class: "text-red-400", hex: "#F87171" },
+			bottomColor: COLORS.MainClause,
 		},
 	],
 ];
@@ -261,13 +261,13 @@ export const notAloneExamples: SentencesType = [
 			danish: "Jeg elsker is,",
 			explanation: "I love ice cream,",
 			bottomExplanation: "Main clause",
-			bottomColor: { class: "text-red-400", hex: "#F87171" },
+			bottomColor: COLORS.MainClause,
 		},
 		{
 			danish: "fordi det er lækkert",
 			explanation: "because it is delicious",
 			bottomExplanation: "Subordinate clause",
-			bottomColor: { class: "text-blue-400", hex: "#60A5FA" },
+			bottomColor: COLORS.SubordinateClause,
 		},
 	],
 	[
@@ -275,13 +275,13 @@ export const notAloneExamples: SentencesType = [
 			danish: "Da jeg var lille, ",
 			explanation: "When I was little, ",
 			bottomExplanation: "Subordinate clause",
-			bottomColor: { class: "text-blue-400", hex: "#60A5FA" },
+			bottomColor: COLORS.SubordinateClause,
 		},
 		{
 			danish: "legede jeg med dukker",
 			explanation: "I played with dolls",
 			bottomExplanation: "Main clause",
-			bottomColor: { class: "text-red-400", hex: "#F87171" },
+			bottomColor: COLORS.MainClause,
 		},
 	],
 ];

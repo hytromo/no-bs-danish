@@ -26,7 +26,7 @@ export default function Word({ className, children, explanation, bottomExplanati
 	const colorChoice = theme === THEMES.dark ? COLOR.dark : COLOR.white;
 
 	return (
-		<div className={`inline-flex flex-col content-center items-center ${className ? className : ""}`}>
+		<div style={{ width: "max-content" }} className={`flex flex-col items-center ${className ? className : ""}`}>
 			<div className={colorChoice.class} ref={explanationDiv}>{explanation}</div>
 			<Bracket rotate={false} color={colorChoice.hex} width={ANCHOR_WIDTH} />
 

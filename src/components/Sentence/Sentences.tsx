@@ -11,10 +11,10 @@ export default function Sentences({ sentences, wordClassName }: {
 	sentences: SentencesType, wordClassName?: string
 }) {
 	return (
-		<div className="flex flex-col align-center">
+		<div className="flex flex-col items-center">
 			{
 				sentences.map((example) => (
-					<div className="mb-10 flex justify-center gap-x-5">
+					<div className="mb-10 inline-flex justify-center gap-x-10">
 						{example.map((word) => (
 							<Word
 								className={wordClassName}
