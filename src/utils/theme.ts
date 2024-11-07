@@ -2,7 +2,7 @@ import { atom, type StoreValue } from "nanostores";
 
 export const THEMES = {
   dark: "forest" as const,
-  light: "lemonade" as const,
+  light: "nord" as const,
 };
 
 // gets the user's theme preference from the operating system
