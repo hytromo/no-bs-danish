@@ -13,10 +13,11 @@ export default function Sentences({ sentences, wordClassName }: {
 	return (
 		<div className="flex flex-col items-center">
 			{
-				sentences.map((example) => (
-					<div className="mb-10 inline-flex justify-center gap-x-10">
-						{example.map((word) => (
+				sentences.map((example, index1) => (
+					<div className="mb-10 inline-flex justify-center gap-x-10" key={index1}>
+						{example.map((word, index2) => (
 							<Word
+								key={`${index1}-${index2}`}
 								className={wordClassName}
 								explanation={word.explanation}
 								bottomExplanation={word.bottomExplanation}

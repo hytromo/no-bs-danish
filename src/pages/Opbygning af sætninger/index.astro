@@ -1,7 +1,8 @@
 ---
-import { Image } from "astro:assets";
+import Card from "../../components/Card.astro";
 import hovedsaetningImage from "../../images/sentences/hovedsætning.jpg";
 import ledsaetningImage from "../../images/sentences/ledsætning.jpg";
+import trickyImage from "../../images/sentences/tricky.jpg";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -30,43 +31,34 @@ import Layout from "../../layouts/Layout.astro";
 		</div>
 	</div>
 
-	<div class="flex w-full space-x-40 px-40">
-		<div class="card card-compact bg-base-100 shadow-xl flex-1">
-			<figure>
-				<Image
-					src={hovedsaetningImage}
-					alt="A big kitten. Photo by Frida Lannerström on Unsplash"
-				/>
-			</figure>
-			<div class="card-body">
-				<h2 class="card-title">Hovedsætning</h2>
-				<p>A sentence that can stand alone.</p>
-				<div class="card-actions justify-end">
-					<a
-						href="/Opbygning af sætninger/Hovedsætning"
-						class="btn btn-neutral">Choose</a
-					>
-				</div>
-			</div>
-		</div>
+	<div class="flex w-full space-x-40 px-40 mb-20">
+		<Card
+			image={hovedsaetningImage}
+			title="Hovedsætning"
+			body="A sentence that can stand alone."
+			href="/Opbygning af sætninger/Hovedsætning"
+			image={hovedsaetningImage}
+			altText="A big kitten. Photo by Frida Lannerström on Unsplash"
+		/>
 		<div class="divider divider-horizontal">OR</div>
-		<div class="card card-compact bg-base-100 shadow-xl flex-1">
-			<figure>
-				<Image
-					src={ledsaetningImage}
-					alt="A little kitten. Photo by George Bonev on Unsplash"
-				/>
-			</figure>
-			<div class="card-body">
-				<h2 class="card-title">Ledsætning</h2>
-				<p>A sentence that cannot stand alone.</p>
-				<div class="card-actions justify-end">
-					<a
-						href="/Opbygning af sætninger/Ledsætning"
-						class="btn btn-neutral">Choose</a
-					>
-				</div>
-			</div>
-		</div>
+		<Card
+			image={ledsaetningImage}
+			title="Ledsætning"
+			body="A sentence that cannot stand alone."
+			href="/Opbygning af sætninger/Ledsætning"
+			image={ledsaetningImage}
+			altText="A little kitten. Photo by George Bonev on Unsplash"
+		/>
+	</div>
+
+	<div class="flex w-full space-x-40 px-40 mb-20">
+		<Card
+			image={trickyImage}
+			title="Trickier cases"
+			body="Where rules are not so clear"
+			href="/Opbygning af sætninger/Tricky"
+			image={trickyImage}
+			altText="Photo by Michał Parzuchowski on Unsplash"
+		/>
 	</div>
 </Layout>
