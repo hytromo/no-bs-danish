@@ -1,0 +1,40 @@
+---
+import type { NestedPages } from "./Drawer.astro";
+
+interface Props {
+	parent: string;
+	children: NestedPages | null;
+	fullPath: string;
+}
+
+const { parent, children, fullPath } = Astro.props;
+const hasChildren = children && Object.keys(children).length > 0;
+---
+
+{
+	hasChildren && (
+		<li>
+			<details open>
+				<summary>
+					<a href={fullPath}>{parent}</a>
+				</summary>
+				<ul>
+					{Object.entries(children).map(([child, grandChildren]) => (
+						<Astro.self
+							parent={child}
+							children={grandChildren}
+							fullPath={`${fullPath}/${child}`}
+						/>
+					))}
+				</ul>
+			</details>
+		</li>
+	)
+}
+{
+	!hasChildren && parent !== "" && (
+		<li>
+			<a href={fullPath}>{parent}</a>
+		</li>
+	)
+}

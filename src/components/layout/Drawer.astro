@@ -1,9 +1,37 @@
 ---
-interface Props {
-	pages: string[];
-}
+import DrawerComponent from "./DrawerComponent.astro";
 
-const { pages } = Astro.props;
+/**
+ * Pages in the form: Home, Structure/Page1, Structure/Page2, Structure/Inner/Page3 etc.
+ */
+const allPages = [
+	"Home",
+	...Object.keys(import.meta.glob(["../../pages/**/*.astro"]))
+		.map((post) =>
+			post
+				.replace(/\.astro$/, "")
+				.replace("../../pages/", "")
+				.replace(/\/index$/, ""),
+		)
+		.filter((p) => p && p !== "index")
+		.sort(),
+];
+
+export type NestedPages = {
+	[key: string]: NestedPages | null;
+};
+
+const nestedPages: NestedPages = {};
+for (const page of allPages) {
+	const parts = page.split("/");
+	let current = nestedPages;
+	for (const part of parts) {
+		if (!current[part]) {
+			current[part] = {};
+		}
+		current = current[part] as NestedPages;
+	}
+}
 ---
 
 <div class="drawer-side">
@@ -11,12 +39,15 @@ const { pages } = Astro.props;
 		for="navigation-drawer"
 		aria-label="close sidebar"
 		class="drawer-overlay"></label>
+
 	<ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
 		{
-			pages.map((page) => (
-				<li>
-					<a href={page === "Home" ? "/" : `/${page}`}>{page}</a>
-				</li>
+			Object.entries(nestedPages).map(([parent, children]) => (
+				<DrawerComponent
+					parent={parent}
+					children={children}
+					fullPath={parent === "Home" ? "/" : `/${parent}`}
+				/>
 			))
 		}
 	</ul>
