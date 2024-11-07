@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.tsx";
 import ThemeSwitcher from "../components/ThemeSwitcher.tsx";
-import { ViewTransitions } from "astro:transitions";
 import { Image } from "astro:assets";
 import poo from "../images/poo.svg";
 import { Breadcrumbs } from "astro-breadcrumbs";
@@ -48,7 +47,6 @@ const {
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <ViewTransitions />
     <title>{danish}</title>
     <body class="bg-base-100 min-h-screen">
         <NavBar />
