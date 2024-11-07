@@ -1,120 +1,14 @@
 ---
-import Word from "../components/Word/Word.tsx";
+import Sentences from "../components/Sentence/Sentences.tsx";
 import Layout from "../layouts/Layout.astro";
+import {
+	firstFormExamples,
+	genericExamples,
+	notAloneExamples,
+	secondFormExamples,
+	secondFormExamplesStartWithSentence,
+} from "../utils/examples/hovedsætning";
 import { COLORS } from "../utils/fixedColors.ts";
-
-const genericExamples = [
-	[
-		{
-			danish: "Jeg",
-			explanation: "I",
-			bottomExplanation: "Subject" as const,
-		},
-		{
-			danish: "køber",
-			explanation: "buy",
-			bottomExplanation: "Verb" as const,
-		},
-		{
-			danish: "blomster",
-			explanation: "flowers",
-			bottomExplanation: "Object" as const,
-		},
-	],
-	[
-		{
-			danish: "Hun",
-			explanation: "She",
-			bottomExplanation: "Subject" as const,
-		},
-		{
-			danish: "læser",
-			explanation: "reads",
-			bottomExplanation: "Verb" as const,
-		},
-		{
-			danish: "bogen",
-			explanation: "the book",
-			bottomExplanation: "Object" as const,
-		},
-	],
-	[
-		{
-			danish: "Han",
-			explanation: "He",
-			bottomExplanation: "Subject" as const,
-		},
-		{
-			danish: "spiller",
-			explanation: "plays",
-			bottomExplanation: "Verb" as const,
-		},
-		{
-			danish: "fodbold",
-			explanation: "football",
-			bottomExplanation: "Object" as const,
-		},
-	],
-];
-
-const firstFormExamples = [
-	[
-		{
-			danish: "Jeg",
-			explanation: "I",
-			bottomExplanation: "Subject" as const,
-		},
-		{
-			danish: "køber",
-			explanation: "buy",
-			bottomExplanation: "Verb" as const,
-		},
-		{
-			danish: "altid",
-			explanation: "always",
-			bottomExplanation: "Adverb" as const,
-		},
-		{
-			danish: "blomster",
-			explanation: "flowers",
-			bottomExplanation: "Object" as const,
-		},
-	],
-	[
-		{
-			danish: "Hun",
-			explanation: "She",
-			bottomExplanation: "Subject" as const,
-		},
-		{
-			danish: "læser",
-			explanation: "reads",
-			bottomExplanation: "Verb" as const,
-		},
-		{
-			danish: "bogen",
-			explanation: "the book",
-			bottomExplanation: "Object" as const,
-		},
-	],
-	[
-		{
-			danish: "Han",
-			explanation: "He",
-			bottomExplanation: "Subject" as const,
-		},
-		{
-			danish: "spiller",
-			explanation: "plays",
-			bottomExplanation: "Verb" as const,
-		},
-		{
-			danish: "fodbold",
-			explanation: "football",
-			bottomExplanation: "Object" as const,
-		},
-	],
-];
 ---
 
 <Layout
@@ -132,49 +26,73 @@ const firstFormExamples = [
 		<article class="prose max-w-none text-center mb-10">
 			<h3>A sentence that can stand alone and make sense.</h3>
 		</article>
-		<div class="flex flex-col align-center">
-			{
-				genericExamples.map((example) => (
-					<div class="mb-10 flex justify-center">
-						{example.map((word) => (
-							<Word
-								client:only="react"
-								explanation={word.explanation}
-								bottomExplanation={word.bottomExplanation}
-								bottomColor={COLORS[word.bottomExplanation]}
-							>
-								{word.danish}
-							</Word>
-						))}
-					</div>
-				))
-			}
-		</div>
+		<Sentences client:only="react" sentences={genericExamples} />
+		<div class="divider mb-10"></div>
 		<article class="prose max-w-none text-center mb-10">
 			<h3>
-				First form: <span class={COLORS.Subject.class}>S</span>
-				<span class={COLORS.Verb.class}>V</span>
-				<span class={COLORS.Adverb.class}>(A)</span> -
-				<span class={COLORS.Object.class}>O</span>
+				1st form:
+				<span class={COLORS.Subject.class}>Subject</span>
+				<span class={COLORS.Verb.class}>Verb</span>
+				<span class={COLORS.Adverb.class}>(Adverb)</span> -
+				<span class={COLORS.Object.class}>Object</span>
 			</h3>
+			<p>Used when the sentence starts with the subject.</p>
 		</article>
-		<div class="flex flex-col align-center">
-			{
-				firstFormExamples.map((example) => (
-					<div class="mb-10 flex justify-center">
-						{example.map((word) => (
-							<Word
-								client:only="react"
-								explanation={word.explanation}
-								bottomExplanation={word.bottomExplanation}
-								bottomColor={COLORS[word.bottomExplanation]}
-							>
-								{word.danish}
-							</Word>
-						))}
-					</div>
-				))
-			}
-		</div>
+		<Sentences client:only="react" sentences={firstFormExamples} />
+		<div class="divider mb-10"></div>
+		<article class="prose max-w-none text-center mb-10">
+			<h3>
+				2nd form (inversion):
+				<span class={COLORS.Verb.class}>Verb</span>
+				<span class={COLORS.Subject.class}>Subject</span>
+				<span class={COLORS.Adverb.class}>(Adverb)</span> -
+				<span class={COLORS.Object.class}>Object</span>
+			</h3>
+			<p>Used when the sentence does not start with the subject.</p>
+		</article>
+		<Sentences client:only="react" sentences={secondFormExamples} />
+		<article class="prose max-w-none text-center my-10">
+			<p>
+				Also used when a sentence starts with "another sentence"<br
+				/>and it is a main clause (it can stand alone and make sense)
+			</p>
+		</article>
+		<Sentences
+			client:only="react"
+			sentences={secondFormExamplesStartWithSentence}
+		/>
+		<div class="divider mb-10"></div>
+		<article class="prose max-w-none text-center mb-10">
+			<h3>
+				A main clause doesn't <span class="italic">need</span> to stand alone.
+				It needs to be <span class="italic">able</span> to stand alone.
+			</h3>
+			<p>More sentences could follow or precede.</p>
+		</article>
+		<Sentences client:only="react" sentences={notAloneExamples} />
+		<!-- <div class="divider mb-10"></div>
+		<article class="prose text-center mb-10 mx-auto">
+			<p>
+				<span>
+					How do I know that a sentence that <span class="font-bold"
+						>doesn't start with a subject</span
+					> is a main clause?
+				</span>
+				<ul class="text-left">
+					<li>
+						Words like "Heldigvis" (fortunately), "I går"
+						(yesterday), "Desværre" (unfortunately), "Hvornår"
+						(when) etc start a main sentence because they do not
+						need additional context - they can stand alone and make
+						sense.
+					</li>
+					<li>
+						Words that need additional context (e.g. "Fordi"
+						(because), "Hvis" (if), "Da" (when), "Selvom" (although)
+						etc) start a subordinate clause.
+					</li>
+				</ul>
+			</p>
+		</article> -->
 	</div>
 </Layout>
