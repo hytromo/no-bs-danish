@@ -4,8 +4,6 @@ import { $currentTheme, THEMES } from '../../utils/theme';
 import Bracket from './Bracket';
 import WordCss from './Word.module.css';
 
-const ANCHOR_WIDTH = 5;
-
 const COLOR = {
 	dark: { class: 'text-white', hex: "#fff" },
 	white: { class: 'text-black', hex: "#000" },
@@ -28,7 +26,7 @@ export default function Word({ className, children, explanation, bottomExplanati
 	return (
 		<div style={{ width: "max-content" }} className={`flex flex-col items-center ${className ? className : ""}`}>
 			<div className={colorChoice.class} ref={explanationDiv}>{explanation}</div>
-			<Bracket rotate={false} color={colorChoice.hex} width={ANCHOR_WIDTH} />
+			<Bracket rotate={false} color={colorChoice.hex} />
 
 			<div
 				className={`${WordCss.Word} ${colorChoice.class} font-bold text-xl`} ref={childrenDiv}>{children}</div>
@@ -36,7 +34,7 @@ export default function Word({ className, children, explanation, bottomExplanati
 			{
 				bottomExplanation && (
 					<>
-						<Bracket rotate color={bottomColor?.hex || colorChoice.hex} width={ANCHOR_WIDTH} />
+						<Bracket rotate color={bottomColor?.hex || colorChoice.hex} />
 						<div className={bottomColor?.class || colorChoice.class} ref={bottomExplanationDiv}>{bottomExplanation}</div>
 					</>
 				)

@@ -1,0 +1,23 @@
+---
+interface Props {
+	pages: string[];
+}
+
+const { pages } = Astro.props;
+---
+
+<div class="drawer-side">
+	<label
+		for="navigation-drawer"
+		aria-label="close sidebar"
+		class="drawer-overlay"></label>
+	<ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+		{
+			pages.map((page) => (
+				<li>
+					<a href={page === "Home" ? "/" : `/${page}`}>{page}</a>
+				</li>
+			))
+		}
+	</ul>
+</div>
