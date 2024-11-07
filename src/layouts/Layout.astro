@@ -8,117 +8,67 @@ import { Breadcrumbs } from "astro-breadcrumbs";
 
 import "astro-breadcrumbs/breadcrumbs.css";
 import Drawer from "../components/layout/Drawer.astro";
+import NavBar from "../components/layout/NavBar.astro";
 
 interface Props {
-	title: {
-		danish: string;
-		translation: string;
-	};
+    title: {
+        danish: string;
+        translation: string;
+    };
 }
 
 const {
-	title: { danish, translation },
+    title: { danish, translation },
 } = Astro.props;
 ---
 
 <html lang="en">
-	<script is:inline>
-		try {
-			// either set the remembered user theme or use the system theme
-			// the location of this script is here in order to avoid flashing the default theme
-			const chosenTheme =
-				localStorage.getItem("theme") ||
-				(window.matchMedia("(prefers-color-scheme: dark)").matches
-					? "forest"
-					: "lemonade");
+    <script is:inline>
+        try {
+            // either set the remembered user theme or use the system theme
+            // the location of this script is here in order to avoid flashing the default theme
+            const chosenTheme =
+                localStorage.getItem("theme") ||
+                (window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "forest"
+                    : "lemonade");
 
-			console.log(
-				"Setting theme to",
-				chosenTheme,
-				localStorage.getItem("theme"),
-			);
-			document.documentElement.setAttribute("data-theme", chosenTheme);
-		} catch (e) {
-			console.error(e);
-		}
-	</script>
-	<meta charset="UTF-8" />
-	<meta name="description" content="Astro description" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="generator" content={Astro.generator} />
-	<ViewTransitions />
-	<title>{danish}</title>
-	<body class="bg-base-100 min-h-screen">
-		<div
-			class="navbar bg-base-100 p-4 fixed top-0 left-0 right-0 max-w-screen-2xl mx-auto z-50 shadow-md rounded-b-lg"
-		>
-			<div class="navbar-start">
-				<div class="dropdown">
-					<div
-						tabindex={0}
-						role="button"
-						class="btn btn-ghost lg:hidden"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-5 w-5"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M4 6h16M4 12h8m-8 6h16"></path>
-						</svg>
-					</div>
-					<ul
-						tabindex={0}
-						class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-					>
-						<li><a>Item 1</a></li>
-						<li>
-							<a>Parent</a>
-							<ul class="p-2">
-								<li><a>Submenu 1</a></li>
-								<li><a>Submenu 2</a></li>
-							</ul>
-						</li>
-						<li><a>Item 3</a></li>
-					</ul>
-				</div>
-				<a href="/" class="btn btn-ghost text-xl"
-					>No
-					<Image src={poo} alt="poo" class="w-6 h-6" />
-					danish</a
-				>
-			</div>
-			<div class="navbar-center hidden lg:flex">
-				<Breadcrumbs />
-			</div>
-			<div class="navbar-end">
-				<ThemeSwitcher client:only="react" />
-			</div>
-		</div>
+            console.log(
+                "Setting theme to",
+                chosenTheme,
+                localStorage.getItem("theme"),
+            );
+            document.documentElement.setAttribute("data-theme", chosenTheme);
+        } catch (e) {
+            console.error(e);
+        }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{danish}</title>
+    <body class="bg-base-100 min-h-screen">
+        <NavBar />
 
-		<div class="drawer lg:drawer-open">
-			<input
-				id="navigation-drawer"
-				type="checkbox"
-				class="drawer-toggle"
-			/>
+        <main class="max-w-screen-2xl m-auto">
+            <div class="drawer lg:drawer-open">
+                <input
+                    id="navigation-drawer"
+                    type="checkbox"
+                    class="drawer-toggle"
+                />
 
-			<div class="drawer-content">
-				<Header text={danish} tooltip={translation} />
-				<main class="max-w-screen-2xl m-auto">
-					<div class="divider mb-10"></div>
-					<slot />
-					<div class="divider mb-10"></div>
-				</main>
-			</div>
-			<Drawer />
-		</div>
-	</body>
+                <div class="drawer-content">
+                    <Header text={danish} tooltip={translation} />
+                    <div class="divider mb-10"></div>
+                    <slot />
+                    <div class="divider mb-10"></div>
+                </div>
+                <Drawer />
+            </div>
+        </main>
+    </body>
 </html>

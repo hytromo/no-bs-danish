@@ -1,36 +1,39 @@
 import { useEffect, useState } from "react";
 
 export const useObserveSize = ({
-	observedDiv,
+  observedDiv,
 }: {
-	observedDiv: React.RefObject<HTMLDivElement>
+  observedDiv: React.RefObject<HTMLDivElement>;
 }) => {
-	const [dims, setDims] = useState({ width: 0, height: 0 });
+  const [dims, setDims] = useState({ width: 0, height: 0 });
 
-	useEffect(() => {
-		if (!observedDiv.current) {
-			return;
-		}
+  useEffect(() => {
+    if (!observedDiv.current) {
+      return;
+    }
 
-		const resizeObserver = new ResizeObserver(() => {
-			if (!observedDiv.current) {
-				return;
-			}
+    const resizeObserver = new ResizeObserver(() => {
+      if (!observedDiv.current) {
+        return;
+      }
 
-			if (observedDiv.current.offsetWidth !== dims.width || observedDiv.current.offsetHeight !== dims.height) {
-				setDims({
-					width: observedDiv.current.offsetWidth,
-					height: observedDiv.current.offsetHeight
-				});
-			}
-		});
+      if (
+        observedDiv.current.offsetWidth !== dims.width ||
+        observedDiv.current.offsetHeight !== dims.height
+      ) {
+        setDims({
+          width: observedDiv.current.offsetWidth,
+          height: observedDiv.current.offsetHeight,
+        });
+      }
+    });
 
-		resizeObserver.observe(observedDiv.current);
+    resizeObserver.observe(observedDiv.current);
 
-		return function cleanup() {
-			resizeObserver.disconnect();
-		}
-	});
+    return function cleanup() {
+      resizeObserver.disconnect();
+    };
+  });
 
-	return dims;
-}
+  return dims;
+};
