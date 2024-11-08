@@ -1,0 +1,99 @@
+---
+import Sentences from "../../components/Sentence/Sentences";
+import Tooltip from "../../components/Tooltip.astro";
+import Layout from "../../layouts/Layout.astro";
+import { genericExamples } from "../../utils/examples/personlige-pronominer";
+import { COLORS } from "../../utils/fixedColors";
+---
+
+<Layout
+    title={{
+        text: "Personal Pronouns",
+        tooltip: "Personlige Pronominer",
+    }}
+>
+    <div>
+        <article class="prose max-w-none text-center mb-10">
+            <h3>
+                Pronouns are words that take place of nouns to avoid repetition.
+            </h3>
+            <div class="flex justify-center mb-8">
+                <table class="prose-table max-w-lg text-lg">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Translated</th>
+                            <th>Object</th>
+                            <th>Translated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class={COLORS.Subject.class}> Jeg </td>
+                            <td class={COLORS.Subject.class}> I </td>
+                            <td class={COLORS.Object.class}> Mig </td>
+                            <td class={COLORS.Object.class}> Me </td>
+                        </tr>
+                        <tr>
+                            <td class={COLORS.Subject.class}> Du </td>
+                            <td class={COLORS.Subject.class}> You </td>
+                            <td class={COLORS.Object.class}> Dig </td>
+                            <td class={COLORS.Object.class}> You </td>
+                        </tr>
+
+                        <tr>
+                            <td class={COLORS.Subject.class}> Han </td>
+                            <td class={COLORS.Subject.class}> He </td>
+                            <td class={COLORS.Object.class}> Ham </td>
+                            <td class={COLORS.Object.class}> Him </td>
+                        </tr>
+
+                        <tr>
+                            <td class={COLORS.Subject.class}> Han </td>
+                            <td class={COLORS.Subject.class}> She </td>
+                            <td class={COLORS.Object.class}> Hende </td>
+                            <td class={COLORS.Object.class}> Her </td>
+                        </tr>
+
+                        <tr>
+                            <td class={COLORS.Subject.class}> Den </td>
+                            <td class={COLORS.Subject.class}> It (n-words) </td>
+                            <td class={COLORS.Object.class}> Den </td>
+                            <td class={COLORS.Object.class}> It (n-words) </td>
+                        </tr>
+
+                        <tr>
+                            <td class={COLORS.Subject.class}> Det </td>
+                            <td class={COLORS.Subject.class}> It (t-words) </td>
+                            <td class={COLORS.Object.class}> Det </td>
+                            <td class={COLORS.Object.class}> It (t-words) </td>
+                        </tr>
+
+                        <tr>
+                            <td class={COLORS.Subject.class}> Vi </td>
+                            <td class={COLORS.Subject.class}> We </td>
+                            <td class={COLORS.Object.class}> Os </td>
+                            <td class={COLORS.Object.class}> Us </td>
+                        </tr>
+
+                        <tr>
+                            <td class={COLORS.Subject.class}> I </td>
+                            <td class={COLORS.Subject.class}> You </td>
+                            <td class={COLORS.Object.class}> Jer </td>
+                            <td class={COLORS.Object.class}> You </td>
+                        </tr>
+
+                        <tr>
+                            <td class={COLORS.Subject.class}> De </td>
+                            <td class={COLORS.Subject.class}> They </td>
+                            <td class={COLORS.Object.class}> Dem </td>
+                            <td class={COLORS.Object.class}> Them </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        <div class="divider mb-10"></div>
+        <Sentences client:only="react" sentences={genericExamples} />
+    </div>
+</Layout>
