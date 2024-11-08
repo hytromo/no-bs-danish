@@ -1,35 +1,13 @@
 ---
-import Sentences from "../../components/Sentence/Sentences";
-import Layout from "../../layouts/Layout.astro";
-import {
-    genericExamples,
-    firstFormExamples,
-    secondFormExamples,
-    secondFormExamplesStartWithSentence,
-    notAloneExamples,
-} from "../../utils/examples/hovedsætning";
-import { COLORS } from "../../utils/fixedColors";
----
+import { basename } from "../../utils/basename";
 
-<Layout
-    title={{
-        text: "Nouns",
-        tooltip: "Navneord",
-    }}
->
-    <div>
-        <article class="prose max-w-none text-center mb-10">
-            <h3>Nouns describe places, things, animals etc.</h3>
-        </article>
-        <Sentences
-            client:only="react"
-            sentences={[
-                [
-                    { danish: "bil,", explanation: "car" },
-                    { danish: "bord,", explanation: "table" },
-                    { danish: "menneske,", explanation: "human" },
-                ],
-            ]}
-        />
-    </div>
-</Layout>
+const firstAlphabeticalSubpage = [
+    ...Object.keys(import.meta.glob(["./*.astro"]))
+        .map((post) => post.replace(/\.astro$/, "").replace("./", ""))
+        .filter((p) => p && p !== "index")
+        .sort(),
+][0];
+return Astro.redirect(
+    `${basename(Astro.url.pathname)}/${firstAlphabeticalSubpage}`,
+);
+---

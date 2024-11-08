@@ -1,3 +1,13 @@
 ---
-return Astro.redirect("/Verbs/Tenses");
+import { basename } from "../../utils/basename";
+
+const firstAlphabeticalSubpage = [
+    ...Object.keys(import.meta.glob(["./*.astro"]))
+        .map((post) => post.replace(/\.astro$/, "").replace("./", ""))
+        .filter((p) => p && p !== "index")
+        .sort(),
+][0];
+return Astro.redirect(
+    `${basename(Astro.url.pathname)}/${firstAlphabeticalSubpage}`,
+);
 ---

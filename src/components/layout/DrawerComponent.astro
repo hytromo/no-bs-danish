@@ -9,6 +9,12 @@ interface Props {
 
 const { parent, children, fullPath } = Astro.props;
 const hasChildren = children && Object.keys(children).length > 0;
+const decodedURI = decodeURI(Astro.url.pathname);
+const isActivePath = !hasChildren && decodedURI === fullPath;
+
+if (!hasChildren) {
+    console.log(decodedURI, "==", fullPath, "?");
+}
 ---
 
 {
@@ -16,9 +22,7 @@ const hasChildren = children && Object.keys(children).length > 0;
         <li>
             <details open>
                 <summary>
-                    <a class="secondary-content" href={fullPath}>
-                        {parent}
-                    </a>
+                    <a href={fullPath}>{parent}</a>
                 </summary>
                 <ul>
                     {Object.entries(children).map(([child, grandChildren]) => (
@@ -36,7 +40,9 @@ const hasChildren = children && Object.keys(children).length > 0;
 {
     !hasChildren && parent !== "" && (
         <li>
-            <a href={fullPath}>{parent}</a>
+            <a class={isActivePath ? "active" : ""} href={fullPath}>
+                {parent}
+            </a>
         </li>
     )
 }
