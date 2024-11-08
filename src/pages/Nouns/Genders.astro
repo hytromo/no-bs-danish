@@ -1,0 +1,123 @@
+---
+import Sentences from "../../components/Sentence/Sentences";
+import Layout from "../../layouts/Layout.astro";
+import {
+    genericExamples,
+    firstFormExamples,
+    secondFormExamples,
+    secondFormExamplesStartWithSentence,
+    notAloneExamples,
+} from "../../utils/examples/hovedsætning";
+import { COLORS } from "../../utils/fixedColors";
+---
+
+<Layout
+    title={{
+        text: "Genders",
+        tooltip: "Køn",
+    }}
+>
+    <div>
+        <article class="prose max-w-none mb-10 text-center">
+            <h3>Common Gender (fælleskøn) vs No Gender (intetkøn)</h3>
+            <p class="mb-8">
+                Words (Ord) either are gendered or they are not. There is <span
+                    class="font-bold">no rule</span
+                > to distinguish a noun between these two, so just a matter of practice.
+            </p>
+            <div class="flex justify-center mb-8">
+                <table class="prose-table max-w-lg text-lg">
+                    <thead>
+                        <tr>
+                            <th> N-ord (Common Gender) </th>
+                            <th> T-ord (No Gender) </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                e<span class="font-bold text-xl">n</span> bil (a
+                                car)
+                            </td>
+                            <td>
+                                e<span class="font-bold text-xl">t</span> bord (a
+                                table)
+                            </td>
+
+                            <tr>
+                                <td>
+                                    bile<span class="font-bold text-xl">n</span>
+                                    (the car)
+                                </td>
+                                <td>
+                                    borde<span class="font-bold text-xl">t</span
+                                    > (the table)
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    mi<span class="font-bold text-xl">n</span> bil
+                                    (my car)
+                                </td>
+                                <td>
+                                    mi<span class="font-bold text-xl">t</span> bord
+                                    (my table)
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    de<span class="font-bold text-xl">n</span> store
+                                    bil (the big car)
+                                </td>
+                                <td>
+                                    de<span class="font-bold text-xl">t</span> stor<span
+                                        class="font-bold text-xl">t</span
+                                    > bord (the big table)
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    de<span class="font-bold text-xl">nn</span>e
+                                    bil (this car)
+                                </td>
+                                <td>
+                                    de<span class="font-bold text-xl">tt</span>e
+                                    bord (this table)
+                                </td>
+                            </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <Sentences
+                client:only="react"
+                sentences={[
+                    [
+                        { danish: "Jeg", explanation: "I" },
+                        { danish: "bruger", explanation: "use" },
+                        {
+                            danish: "bilen",
+                            explanation: "the car",
+                            bottomExplanation: "bestemt bil / specific car",
+                            bottomColor: COLORS.SpecificNoun,
+                        },
+                    ],
+                    [
+                        { danish: "Jeg", explanation: "I" },
+                        { danish: "har brug for", explanation: "need" },
+                        {
+                            danish: "en bil",
+                            explanation: "a car",
+                            bottomExplanation:
+                                "ubestemt bil / non-specific car",
+                            bottomColor: COLORS.NonSpecificNoun,
+                        },
+                    ],
+                ]}
+            />
+        </article>
+    </div>
+</Layout>

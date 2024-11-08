@@ -1,0 +1,11 @@
+---
+interface Props {
+    tooltip: string;
+    className?: string;
+}
+const { tooltip, className } = Astro.props;
+---
+
+<span class={["tooltip", className || ""].join(" ")} data-tip={tooltip}>
+    <slot />
+</span>

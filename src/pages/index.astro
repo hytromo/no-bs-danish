@@ -5,18 +5,18 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-	title={{
-		danish: "Hjemmeside",
-		translation: "Home",
-	}}
+    title={{
+        text: "Home",
+        tooltip: "Hjemmeside",
+    }}
 >
-	<div class="flex w-full space-x-40 px-40">
-		<Card
-			image={structureImage}
-			title="Sentence structure"
-			body="How are sentences structured in Danish?"
-			href="/Opbygning af sætninger"
-			altText="Photo by Ricardo Gomez Angel on Unsplash"
-		/>
-	</div>
+    <div class="flex w-full space-x-40 px-40">
+        <Card
+            image={structureImage}
+            title="Sentence structure"
+            body="How are sentences structured in Danish?"
+            href="/Structure of sentences"
+            altText="Photo by Ricardo Gomez Angel on Unsplash"
+        />
+    </div>
 </Layout>

@@ -2,35 +2,35 @@
 import Sentences from "../../components/Sentence/Sentences.tsx";
 import Layout from "../../layouts/Layout.astro";
 import {
-	genericExamples,
-	onlyFormExamples,
+    genericExamples,
+    onlyFormExamples,
 } from "../../utils/examples/ledsætning";
 import { COLORS } from "../../utils/fixedColors";
 ---
 
 <Layout
-	title={{
-		danish: "Ledsætning",
-		translation: "Subordinate clause",
-	}}
+    title={{
+        text: "Subordinate clauses",
+        tooltip: "Ledsætninger",
+    }}
 >
-	<div>
-		<article class="prose max-w-none text-center mb-10">
-			<h3>A sentence that cannot stand alone and make sense.</h3>
-		</article>
-		<Sentences client:only="react" sentences={genericExamples} />
-		<div class="divider mb-10"></div>
-		<article class="prose max-w-none text-center mb-10">
-			<h3>
-				1st and only form:
-				<span class={COLORS.Subject.class}>Subject</span>
-				<span class={COLORS.Adverb.class}>(Adverb)</span> -
-				<span class={COLORS.Verb.class}>Verb</span>
-				<span class={COLORS.Object.class}>Object</span>
-			</h3>
-		</article>
-		<Sentences client:only="react" sentences={onlyFormExamples} />
-		<!-- <div class="divider mb-10"></div>
+    <div>
+        <article class="prose max-w-none text-center mb-10">
+            <h3>A sentence that cannot stand alone and make sense.</h3>
+        </article>
+        <Sentences client:only="react" sentences={genericExamples} />
+        <div class="divider mb-10"></div>
+        <article class="prose max-w-none text-center mb-10">
+            <h3>
+                1st and only form:
+                <span class={COLORS.Subject.class}>Subject</span>
+                <span class={COLORS.Adverb.class}>(Adverb)</span> -
+                <span class={COLORS.Verb.class}>Verb</span>
+                <span class={COLORS.Object.class}>Object</span>
+            </h3>
+        </article>
+        <Sentences client:only="react" sentences={onlyFormExamples} />
+        <!-- <div class="divider mb-10"></div>
 		<article class="prose text-center mb-10 mx-auto">
 			<p>
 				<span>
@@ -54,5 +54,5 @@ import { COLORS } from "../../utils/fixedColors";
 				</ul>
 			</p>
 		</article> -->
-	</div>
+    </div>
 </Layout>

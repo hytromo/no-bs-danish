@@ -11,13 +11,13 @@ import NavBar from "../components/layout/NavBar.astro";
 
 interface Props {
     title: {
-        danish: string;
-        translation: string;
+        text: string;
+        tooltip: string;
     };
 }
 
 const {
-    title: { danish, translation },
+    title: { text: danish, tooltip: translation },
 } = Astro.props;
 ---
 

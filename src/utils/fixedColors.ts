@@ -21,4 +21,7 @@ export const COLORS = {
   },
   MainClause: { class: "text-red-400", hex: "#F87171" },
   SubordinateClause: { class: "text-blue-400", hex: "#60A5FA" },
+  SpecificNoun: { class: "text-yellow-600", hex: "#ca8a04" },
+  NonSpecificNoun: { class: "text-green-600", hex: "#26a856" },
+  Important: { class: "text-red-600", hex: "#f87171" },
 };

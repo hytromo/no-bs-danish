@@ -1,0 +1,217 @@
+---
+import Sentences from "../../components/Sentence/Sentences.tsx";
+import Layout from "../../layouts/Layout.astro";
+import { COLORS } from "../../utils/fixedColors";
+---
+
+<Layout
+    title={{
+        text: "Tricky cases",
+        tooltip: "",
+    }}
+>
+    <div class="flex justify-center">
+        <div class="max-w-xl">
+            <article class="prose max-w-none mb-10">
+                <h1>Så</h1>
+                <p>
+                    Så can mean many things in danish, and it means the
+                    following things related to connecting sentences:
+                    <ul>
+                        <li>Then - Så gik jeg til skole.</li>
+                        <li>
+                            So - Jeg vidste ikke, så jeg slog det op i ordbogen.
+                        </li>
+                        <li>
+                            So that - Jeg brændte mit hus af, så jeg nemt kunne
+                            få forsikringspenge.
+                        </li>
+                    </ul>
+                </p>
+            </article>
+            <div class="divider mb-10"></div>
+            <article class="prose max-w-none text-center mb-10">
+                <h3>THEN</h3>
+                <p>
+                    It starts a <span class={COLORS.MainClause.class}
+                        >Main Clause</span
+                    >, so because "så" it is not a subject, it follows <span
+                        class="font-bold">inversion</span
+                    >.
+                </p>
+                <p>
+                    Tricky because you need more context to understand the
+                    sentence, so it can't technically "stand alone" and be a
+                    main clause, yet it is.
+                </p>
+            </article>
+            <Sentences
+                client:only="react"
+                sentences={[
+                    [
+                        {
+                            danish: "Så gik jeg til skole.",
+                            explanation: "Then I went to school.",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                    ],
+                    [
+                        {
+                            danish: "Så kom han hjem.",
+                            explanation: "Then he came home.",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                    ],
+                    [
+                        {
+                            danish: "Så fik jeg en hund.",
+                            explanation: "Then I got a dog.",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                    ],
+                    [
+                        {
+                            danish: "Jeg spiste mad,",
+                            explanation: "I ate food,",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                        {
+                            danish: "så spillede jeg med min hund.",
+                            explanation: "then I played with my dog.",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                    ],
+                ]}
+            />
+
+            <div class="divider mb-10"></div>
+
+            <article class="prose max-w-none text-center mb-10">
+                <h3>SO</h3>
+                <p>
+                    It connects <span class={COLORS.MainClause.class}
+                        >Main Clauses</span
+                    > without even inversion, like "og" (and) and "eller" (or).
+                </p>
+                <p>
+                    Tricky because you need more context to understand the
+                    sentence, so it can't technically "stand alone" and be a
+                    main clause, yet it is. At the same time, it doesn't even
+                    apply inversion.
+                </p>
+            </article>
+            <Sentences
+                client:only="react"
+                sentences={[
+                    [
+                        {
+                            danish: "Jeg var sulten,",
+                            explanation: "I was hungry,",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                        {
+                            danish: "så jeg spiste mad.",
+                            explanation: "so I ate food.",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                    ],
+                    [
+                        {
+                            danish: "Jeg var træt,",
+                            explanation: "I was tired,",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                        {
+                            danish: "så gik jeg i seng.",
+                            explanation: "so I went to bed.",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                    ],
+                    [
+                        {
+                            danish: "Jeg var træt,",
+                            explanation: "I was tired,",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                        {
+                            danish: "så gik jeg i seng.",
+                            explanation: "so I went to bed.",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                    ],
+                    [
+                        {
+                            danish: "Så gik jeg til skole,",
+                            explanation: "Then I went to school,",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                        {
+                            danish: "for at lære noget.",
+                            explanation: "in order to learn something.",
+                            bottomExplanation: "Subordinate Clause",
+                            bottomColor: COLORS.SubordinateClause,
+                        },
+                    ],
+                ]}
+            />
+
+            <div class="divider mb-10"></div>
+
+            <article class="prose max-w-none text-center mb-10">
+                <h3>SO THAT</h3>
+                <p>
+                    The least weird of the three, it starts a <span
+                        class={COLORS.SubordinateClause.class}
+                        >Subordinate Clause</span
+                    >.
+                </p>
+            </article>
+            <Sentences
+                client:only="react"
+                sentences={[
+                    [
+                        {
+                            danish: "Jeg slukkede alt lys,",
+                            explanation: "I turned off all the lights",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                        {
+                            danish: "så jeg kunne sove.",
+                            explanation: "so that I could sleep.",
+                            bottomExplanation: "Subordinate Clause",
+                            bottomColor: COLORS.SubordinateClause,
+                        },
+                    ],
+                    [
+                        {
+                            danish: "Jeg brændte mit hus af,",
+                            explanation: "I burned my house down",
+                            bottomExplanation: "Main Clause",
+                            bottomColor: COLORS.MainClause,
+                        },
+                        {
+                            danish: "så jeg nemt kunne få forsikringspenge.",
+                            explanation:
+                                "so that I could easily get insurance money.",
+                            bottomExplanation: "Subordinate Clause",
+                            bottomColor: COLORS.SubordinateClause,
+                        },
+                    ],
+                ]}
+            />
+        </div>
+    </div>
+</Layout>
