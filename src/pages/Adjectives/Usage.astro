@@ -1,0 +1,85 @@
+---
+import Sentences from "../../components/Sentence/Sentences";
+import Tooltip from "../../components/Tooltip.astro";
+import Layout from "../../layouts/Layout.astro";
+import {
+    nWordExamples,
+    tWordExamples,
+    pluralWordExamples,
+} from "../../utils/examples/adjektiver";
+import { COLORS } from "../../utils/fixedColors";
+---
+
+<Layout
+    title={{
+        text: "Usage of adjectives",
+        tooltip: "Brug af adjektiver/tillægsord",
+    }}
+>
+    <div>
+        <article class="prose max-w-none text-center mb-10">
+            <h3>Three forms</h3>
+            <p>Adjectives have three forms</p>
+            <div class="flex justify-center mb-7">
+                <table class="prose-table max-w-lg text-lg">
+                    <thead>
+                        <tr>
+                            <th>N-word</th>
+                            <th>T-word</th>
+                            <th>Plural</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class={COLORS.NWord.class}>
+                                <Tooltip tooltip="big"> stor </Tooltip>
+                            </td>
+                            <td class={COLORS.TWord.class}>
+                                <Tooltip tooltip="big"> stort </Tooltip>
+                            </td>
+                            <td class={COLORS.Important.class}>
+                                <Tooltip tooltip="big"> store </Tooltip>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class={COLORS.NWord.class}>
+                                <Tooltip tooltip="red"> rød </Tooltip>
+                            </td>
+                            <td class={COLORS.TWord.class}>
+                                <Tooltip tooltip="red"> rødt </Tooltip>
+                            </td>
+                            <td class={COLORS.Important.class}>
+                                <Tooltip tooltip="red"> røde </Tooltip>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="divider mb-10"></div>
+            <h3>Plural form</h3>
+            <ol class="max-w-lg mx-auto text-left">
+                <li>When the noun is in plural form</li>
+                <li>
+                    When the adjective is <span class="italic">in front</span> of
+                    a noun in specific/bestemt form
+                </li>
+            </ol>
+            <div class="mb-10"></div>
+            <Sentences client:only="react" sentences={pluralWordExamples} />
+            <div class="divider mb-10"></div>
+            <h3>N-Word form</h3>
+            <p>
+                Used for n-word nouns that do not fall under the "plural form"
+                rules
+            </p>
+            <Sentences client:only="react" sentences={nWordExamples} />
+            <div class="divider mb-10"></div>
+            <h3>T-Word form</h3>
+            <p>
+                Used for t-word nouns that do not fall under the "plural form"
+                rules
+            </p>
+            <Sentences client:only="react" sentences={tWordExamples} />
+        </article>
+    </div>
+</Layout>
