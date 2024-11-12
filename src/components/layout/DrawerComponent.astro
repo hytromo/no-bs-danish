@@ -39,7 +39,8 @@ if (!hasChildren) {
     !hasChildren && parent !== "" && (
         <li>
             <a class={isActivePath ? "active" : ""} href={fullPath}>
-                {parent}
+                <!-- remove the numbers in the front of each page number -->
+                {parent.split(". ").slice(1).join("")}
             </a>
         </li>
     )
