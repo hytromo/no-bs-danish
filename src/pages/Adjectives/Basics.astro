@@ -12,8 +12,8 @@ import { COLORS } from "../../utils/fixedColors";
 
 <Layout
     title={{
-        text: "Usage of adjectives",
-        tooltip: "Brug af adjektiver/tillægsord",
+        text: "Basic usage of adjectives",
+        tooltip: "Grundlæggende brug af adjektiver",
     }}
 >
     <div>
@@ -50,6 +50,28 @@ import { COLORS } from "../../utils/fixedColors";
                             </td>
                             <td class={COLORS.Important.class}>
                                 <Tooltip tooltip="red"> røde </Tooltip>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class={COLORS.NWord.class}>
+                                <Tooltip tooltip="old"> gammel </Tooltip>
+                            </td>
+                            <td class={COLORS.TWord.class}>
+                                <Tooltip tooltip="old"> gammelt </Tooltip>
+                            </td>
+                            <td class={COLORS.Important.class}>
+                                <Tooltip tooltip="old"> gamle </Tooltip>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class={COLORS.NWord.class}>
+                                <Tooltip tooltip="used"> brugt </Tooltip>
+                            </td>
+                            <td class={COLORS.TWord.class}>
+                                <Tooltip tooltip="used"> brugt </Tooltip>
+                            </td>
+                            <td class={COLORS.Important.class}>
+                                <Tooltip tooltip="used"> brugte </Tooltip>
                             </td>
                         </tr>
                     </tbody>

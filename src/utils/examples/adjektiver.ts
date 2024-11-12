@@ -132,3 +132,38 @@ export const tWordExamples: SentencesType = [
     },
   ],
 ]
+
+export const degreesExamples: SentencesType = [
+  [
+    {
+      danish: "Den",
+      explanation: "The",
+    },
+    {
+      danish: "størst",
+      explanation: "biggest",
+      bottomExplanation: "superlative form",
+      bottomColor: COLORS.Important
+    },
+    {
+      danish: "vinder!",
+      explanation: "wins!",
+    },
+  ],
+  [
+    {
+      danish: "Den",
+      explanation: "The",
+    },
+    {
+      danish: "større",
+      explanation: "bigger",
+      bottomExplanation: "comperative form",
+      bottomColor: COLORS.Important
+    },
+    {
+      danish: "pude gjorde ham mindre komfortabel",
+      explanation: "pillow made him feel less comfortable",
+    },
+  ]
+]
