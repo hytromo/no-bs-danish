@@ -21,9 +21,7 @@ if (!hasChildren) {
     hasChildren && (
         <li>
             <details open>
-                <summary>
-                    <a href={fullPath}>{parent}</a>
-                </summary>
+                <summary>{parent}</summary>
                 <ul>
                     {Object.entries(children).map(([child, grandChildren]) => (
                         <Astro.self

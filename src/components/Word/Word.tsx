@@ -27,7 +27,7 @@ export default function Word({
   const childrenDiv = useRef<HTMLDivElement>(null);
   const bottomExplanationDiv = useRef<HTMLDivElement>(null);
 
-  const colorChoice = (theme === THEMES.dark) ? COLOR.dark : COLOR.white;
+  const colorChoice = theme === THEMES.dark ? COLOR.dark : COLOR.white;
 
   return (
     <div

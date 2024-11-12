@@ -1,0 +1,71 @@
+---
+import Sentences from "../../components/Sentence/Sentences.tsx";
+import Layout from "../../layouts/Layout.astro";
+import {
+    sameTypeExamples,
+    subordinateExamples,
+} from "../../utils/examples/konjunktioner";
+import { COLORS } from "../../utils/fixedColors.ts";
+---
+
+<Layout
+    title={{
+        text: "Conjunctions",
+        tooltip: "Konjunktioner",
+    }}
+>
+    <div>
+        <article class="prose max-w-none text-center mb-10">
+            <h3>Words that connect sentences</h3>
+            <p>There are two types of conjunctions</p>
+        </article>
+        <div class="divider mb-10"></div>
+        <article class="prose text-center mb-10 max-w-xl mx-auto">
+            <h3>Same-type conjunctions</h3>
+            <p>They connect sentences of the same kind</p>
+            <ul class="italic">
+                <ol>og</ol>
+                <ol>men</ol>
+                <ol>eller</ol>
+                <ol>for</ol>
+                <ol>så*</ol>
+            </ul>
+            <p>
+                * with the meaning of "so" only, see <a
+                    href="/Structure of sentences/Tricky cases">Tricky cases</a
+                >
+            </p>
+            <Sentences client:only="react" sentences={sameTypeExamples} />
+        </article>
+        <article class="prose text-center mb-10 max-w-none">
+            <div class="divider mb-10"></div>
+            <h3>Subordinate conjunctions</h3>
+            <p>They start subordinate clauses / ledsætninger</p>
+            <ul class="italic">
+                <ol>at</ol>
+                <ol>om</ol>
+                <ol>da</ol>
+                <ol>når</ol>
+                <ol>dengang</ol>
+                <ol>fordi</ol>
+                <ol>før</ol>
+                <ol>inden</ol>
+                <ol>hvis</ol>
+                <ol>imens</ol>
+                <ol>selv om</ol>
+                <ol>så*</ol>
+                <ol>hv-ord (hvor, hvorfor etc)</ol>
+                <p>
+                    * with the meaning of "so that" only, see
+                    <a href="/Structure of sentences/Tricky cases"
+                        >Tricky cases</a
+                    >
+                </p>
+                <Sentences
+                    client:only="react"
+                    sentences={subordinateExamples}
+                />
+            </ul>
+        </article>
+    </div>
+</Layout>

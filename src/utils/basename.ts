@@ -1,3 +1,3 @@
 export function basename(path: string) {
-  return path.split('/').reverse()[0];
+  return path.split("/").reverse()[0];
 }

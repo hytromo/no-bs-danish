@@ -81,7 +81,7 @@ export const genericExamples: SentencesType = [
       bottomExplanation: "Object",
       bottomColor: COLORS.Object,
     },
-  ]
+  ],
 ];
 
 // let's describe the with each word individually, and then have the main clauses in a single object altogether, in order to focus

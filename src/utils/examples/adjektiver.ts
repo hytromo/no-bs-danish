@@ -7,7 +7,7 @@ export const pluralWordExamples: SentencesType = [
       danish: "store",
       explanation: "big",
       bottomExplanation: "plural form, case (1)",
-      bottomColor: COLORS.Important
+      bottomColor: COLORS.Important,
     },
     {
       danish: "huse",
@@ -24,12 +24,12 @@ export const pluralWordExamples: SentencesType = [
       danish: "røde",
       explanation: "red",
       bottomExplanation: "specific form, case (2)",
-      bottomColor: COLORS.Important
+      bottomColor: COLORS.Important,
     },
     {
       danish: "ur",
       explanation: "watch",
-    }
+    },
   ],
   [
     {
@@ -41,7 +41,7 @@ export const pluralWordExamples: SentencesType = [
       danish: "store",
       explanation: "big",
       bottomExplanation: "specific form, case (2)",
-      bottomColor: COLORS.Important
+      bottomColor: COLORS.Important,
     },
     {
       danish: "hus",
@@ -58,14 +58,14 @@ export const pluralWordExamples: SentencesType = [
       danish: "røde",
       explanation: "red",
       bottomExplanation: "specific form, case (2)",
-      bottomColor: COLORS.Important
+      bottomColor: COLORS.Important,
     },
     {
       danish: "ur",
       explanation: "watch",
-    }
+    },
   ],
-]
+];
 
 export const nWordExamples: SentencesType = [
   [
@@ -77,13 +77,13 @@ export const nWordExamples: SentencesType = [
       danish: "stor",
       explanation: "big",
       bottomExplanation: "n-word form",
-      bottomColor: COLORS.NWord
+      bottomColor: COLORS.NWord,
     },
     {
       danish: "bil",
       explanation: "car",
       bottomExplanation: "non-specific form" as const,
-      bottomColor: COLORS.NonSpecificNoun
+      bottomColor: COLORS.NonSpecificNoun,
     },
   ],
   [
@@ -95,10 +95,10 @@ export const nWordExamples: SentencesType = [
       danish: "rød",
       explanation: "red",
       bottomExplanation: "n-word form",
-      bottomColor: COLORS.NWord
+      bottomColor: COLORS.NWord,
     },
   ],
-]
+];
 
 export const tWordExamples: SentencesType = [
   [
@@ -110,13 +110,13 @@ export const tWordExamples: SentencesType = [
       danish: "stort",
       explanation: "big",
       bottomExplanation: "t-word form",
-      bottomColor: COLORS.TWord
+      bottomColor: COLORS.TWord,
     },
     {
       danish: "ur",
       explanation: "watch",
       bottomExplanation: "non-specific form" as const,
-      bottomColor: COLORS.NonSpecificNoun
+      bottomColor: COLORS.NonSpecificNoun,
     },
   ],
   [
@@ -128,10 +128,10 @@ export const tWordExamples: SentencesType = [
       danish: "rødt",
       explanation: "red",
       bottomExplanation: "t-word form",
-      bottomColor: COLORS.TWord
+      bottomColor: COLORS.TWord,
     },
   ],
-]
+];
 
 export const degreesExamples: SentencesType = [
   [
@@ -143,7 +143,7 @@ export const degreesExamples: SentencesType = [
       danish: "størst",
       explanation: "biggest",
       bottomExplanation: "superlative form",
-      bottomColor: COLORS.Important
+      bottomColor: COLORS.Important,
     },
     {
       danish: "vinder!",
@@ -159,11 +159,11 @@ export const degreesExamples: SentencesType = [
       danish: "større",
       explanation: "bigger",
       bottomExplanation: "comperative form",
-      bottomColor: COLORS.Important
+      bottomColor: COLORS.Important,
     },
     {
       danish: "pude gjorde ham mindre komfortabel",
       explanation: "pillow made him feel less comfortable",
     },
-  ]
-]
+  ],
+];

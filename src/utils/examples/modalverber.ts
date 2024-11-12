@@ -16,7 +16,7 @@ export const villeExamples: SentencesType = [
     {
       danish: "en kop kaffe?",
       explanation: "a cup of coffee?",
-    }
+    },
   ],
   [
     {
@@ -40,9 +40,9 @@ export const villeExamples: SentencesType = [
     {
       danish: "i lang tid.",
       explanation: "for a long time.",
-    }
-  ]
-]
+    },
+  ],
+];
 export const skulleExamples: SentencesType = [
   [
     {
@@ -58,7 +58,7 @@ export const skulleExamples: SentencesType = [
     {
       danish: "en paraply?",
       explanation: "an umbrella?",
-    }
+    },
   ],
   [
     {
@@ -80,7 +80,7 @@ export const skulleExamples: SentencesType = [
     {
       danish: "til arbejde.",
       explanation: "to work.",
-    }
+    },
   ],
   [
     {
@@ -96,7 +96,7 @@ export const skulleExamples: SentencesType = [
     {
       danish: "i morgen?",
       explanation: "tomorrow?",
-    }
+    },
   ],
   [
     {
@@ -120,7 +120,7 @@ export const skulleExamples: SentencesType = [
     {
       danish: "senere.",
       explanation: "later.",
-    }
+    },
   ],
   [
     {
@@ -144,7 +144,7 @@ export const skulleExamples: SentencesType = [
     {
       danish: "hele dagen.",
       explanation: "the whole day.",
-    }
+    },
   ],
   [
     {
@@ -168,9 +168,9 @@ export const skulleExamples: SentencesType = [
     {
       danish: "på grund af vejret.",
       explanation: "because of the weather.",
-    }
-  ]
-]
+    },
+  ],
+];
 
 export const kunneExamples: SentencesType = [
   // Example with "kunne" (present tense)
@@ -184,7 +184,7 @@ export const kunneExamples: SentencesType = [
       explanation: "help me?",
       bottomExplanation: "Verb in infinitive form",
       bottomColor: COLORS.Verb,
-    }
+    },
   ],
   [
     {
@@ -208,7 +208,7 @@ export const kunneExamples: SentencesType = [
     {
       danish: "sammen.",
       explanation: "together.",
-    }
+    },
   ],
 
   // Example with "kunne" (past tense)
@@ -234,7 +234,7 @@ export const kunneExamples: SentencesType = [
     {
       danish: "nøglerne.",
       explanation: "the keys.",
-    }
+    },
   ],
   [
     {
@@ -258,7 +258,7 @@ export const kunneExamples: SentencesType = [
     {
       danish: "i går.",
       explanation: "yesterday.",
-    }
+    },
   ],
 
   // Example with "har kunnet" (present perfect)
@@ -284,7 +284,7 @@ export const kunneExamples: SentencesType = [
     {
       danish: "hurtigt.",
       explanation: "quickly.",
-    }
+    },
   ],
   [
     {
@@ -308,9 +308,9 @@ export const kunneExamples: SentencesType = [
     {
       danish: "på det seneste.",
       explanation: "lately.",
-    }
+    },
   ],
-]
+];
 
 // TODO: are these examples correct?
 export const burdeExamples: SentencesType = [
@@ -324,7 +324,7 @@ export const burdeExamples: SentencesType = [
       explanation: "take a break?",
       bottomExplanation: "Verb in infinitive form",
       bottomColor: COLORS.Verb,
-    }
+    },
   ],
   [
     {
@@ -348,7 +348,7 @@ export const burdeExamples: SentencesType = [
     {
       danish: "i fremtiden.",
       explanation: "in the future.",
-    }
+    },
   ],
   [
     {
@@ -372,7 +372,7 @@ export const burdeExamples: SentencesType = [
     {
       danish: "hårdtere.",
       explanation: "harder.",
-    }
+    },
   ],
   [
     {
@@ -396,7 +396,7 @@ export const burdeExamples: SentencesType = [
     {
       danish: "tidligere.",
       explanation: "earlier.",
-    }
+    },
   ],
   [
     {
@@ -420,7 +420,7 @@ export const burdeExamples: SentencesType = [
     {
       danish: "om det.",
       explanation: "about it.",
-    }
+    },
   ],
   [
     {
@@ -444,10 +444,9 @@ export const burdeExamples: SentencesType = [
     {
       danish: "på tegnene.",
       explanation: "to the signs.",
-    }
+    },
   ],
-]
-
+];
 
 export const matteExamples = [
   [
@@ -464,7 +463,7 @@ export const matteExamples = [
     {
       danish: "din bog?",
       explanation: "your book?",
-    }
+    },
   ],
   [
     {
@@ -488,7 +487,7 @@ export const matteExamples = [
     {
       danish: "i to timer.",
       explanation: "for two hours.",
-    }
+    },
   ],
   [
     {
@@ -506,8 +505,8 @@ export const matteExamples = [
     {
       danish: "arbejde hele weekenden.",
       explanation: "work all weekend.",
-    }
-  ]
+    },
+  ],
 ];
 
 export const turdeExamples = [
@@ -519,7 +518,7 @@ export const turdeExamples = [
     {
       danish: "sige noget?",
       explanation: "say something?",
-    }
+    },
   ],
   [
     {
@@ -537,7 +536,7 @@ export const turdeExamples = [
     {
       danish: "gå til lægen.",
       explanation: "to go to the doctor.",
-    }
+    },
   ],
   [
     {
@@ -555,6 +554,6 @@ export const turdeExamples = [
     {
       danish: "rejse til udlandet.",
       explanation: "to travel abroad.",
-    }
-  ]
+    },
+  ],
 ];

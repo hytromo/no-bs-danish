@@ -1,19 +1,18 @@
 import type { SentencesType } from "../../components/Sentence/Sentences";
 import { COLORS } from "../fixedColors";
 
-
 export const genericExamples: SentencesType = [
   [
     {
       danish: "Vores",
       explanation: "Our",
       bottomColor: COLORS.Important,
-      bottomExplanation: "possesive pronoun"
+      bottomExplanation: "possesive pronoun",
     },
     {
       danish: "hund er glad",
       explanation: "dog is happy",
-    }
+    },
   ],
   [
     {
@@ -24,7 +23,7 @@ export const genericExamples: SentencesType = [
       danish: "hendes",
       explanation: "her",
       bottomColor: COLORS.Important,
-      bottomExplanation: "possesive pronoun"
+      bottomExplanation: "possesive pronoun",
     },
     {
       danish: "hår",
@@ -40,7 +39,7 @@ export const genericExamples: SentencesType = [
       danish: "deres",
       explanation: "their",
       bottomColor: COLORS.Important,
-      bottomExplanation: "possesive pronoun"
+      bottomExplanation: "possesive pronoun",
     },
     {
       danish: "hunde",
@@ -48,7 +47,6 @@ export const genericExamples: SentencesType = [
     },
   ],
 ];
-
 
 export const tVsnWordsExamples: SentencesType = [
   [
@@ -85,7 +83,6 @@ export const tVsnWordsExamples: SentencesType = [
   ],
 ];
 
-
 export const pluralWordsExamples: SentencesType = [
   [
     {
@@ -104,8 +101,6 @@ export const pluralWordsExamples: SentencesType = [
     },
   ],
 ];
-
-
 
 export const subjectExamples: SentencesType = [
   [
@@ -133,7 +128,7 @@ export const subjectExamples: SentencesType = [
       danish: "hans",
       explanation: "his (someone else's)",
       bottomColor: COLORS.Important,
-      bottomExplanation: "never changes form"
+      bottomExplanation: "never changes form",
     },
     {
       danish: "kone",
@@ -171,5 +166,5 @@ export const subjectExamples: SentencesType = [
       danish: "bord",
       explanation: "table",
     },
-  ]
+  ],
 ];
