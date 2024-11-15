@@ -51,8 +51,6 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{english}</title>
     <body class="bg-base-100 min-h-screen">
-        <NavBar title={english} />
-
         <main class="max-w-screen-2xl m-auto">
             <div class="drawer lg:drawer-open">
                 <input
@@ -62,8 +60,7 @@ const {
                 />
 
                 <div class="drawer-content pt-40">
-                    <!-- <Header text={english} tooltip={translation} /> -->
-                    <!-- <div class="divider mb-10"></div> -->
+                    <NavBar title={english} />
                     <slot />
                     <div class="divider mb-10"></div>
                 </div>
