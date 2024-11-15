@@ -63,7 +63,7 @@ export const onlyFormExamples: SentencesType = [
       bottomColor: COLORS.Object,
     },
     {
-      danish: "min mor ringede til mig.",
+      danish: "ringede min mor til mig.",
       explanation: "my mother called me.",
       bottomExplanation: "Main clause",
       bottomColor: COLORS.MainClause,
@@ -72,7 +72,7 @@ export const onlyFormExamples: SentencesType = [
   [
     {
       danish: "Selvom",
-      explanation: "When",
+      explanation: "Although",
     },
     {
       danish: "jeg",

@@ -21,6 +21,7 @@ import { COLORS } from "../../utils/fixedColors";
 >
     <div>
         <article class="prose max-w-none text-center mb-10">
+            <!-- <article class="prose text-center mb-10 max-w-xl mx-auto"> -->
             <p>
                 There are 3 ways that verbs are inflected. There is <span
                     class="font-bold">no way</span
@@ -161,17 +162,18 @@ import { COLORS } from "../../utils/fixedColors";
             <h3>
                 <Tooltip tooltip="Infinitive">Infinitiv</Tooltip>
             </h3>
-            <p>
+            <p class="max-w-xl mx-auto">
                 Used to describe the verb in its basic form. In Danish, the
-                infinitive is preceded by the word "at" or is used after modal
-                verbs.
+                infinitive is preceded by the word "at" <span class="font-bold"
+                    >or</span
+                > is used after modal verbs.
             </p>
             <Sentences client:only="react" sentences={infinitivExamples} />
             <div class="divider mb-10"></div>
             <h3>
                 <Tooltip tooltip="Present">Nutid</Tooltip>
             </h3>
-            <p>
+            <p class="max-w-xl mx-auto">
                 Used to describe actions that are happening right now, or are
                 happening regularly or are true in general. It is also used to
                 speak about the future according to the context.
@@ -181,13 +183,16 @@ import { COLORS } from "../../utils/fixedColors";
             <h3>
                 <Tooltip tooltip="Past">Datid</Tooltip>
             </h3>
-            <p>Used to describe actions that happened in the past.</p>
+            <p class="max-w-xl mx-auto">
+                Used to describe actions that happened in a specific known time
+                in the past.
+            </p>
             <Sentences client:only="react" sentences={datidExamples} />
             <div class="divider mb-10"></div>
             <h3>
                 <Tooltip tooltip="Present perfect">Førnutid</Tooltip>
             </h3>
-            <p>
+            <p class="max-w-xl mx-auto">
                 Used to describe actions that have been completed in the past
                 and have a connection to the present.
             </p>
@@ -196,16 +201,16 @@ import { COLORS } from "../../utils/fixedColors";
             <h3>
                 <Tooltip tooltip="Past perfect">Førdatid</Tooltip>
             </h3>
-            <p>
+            <p class="max-w-xl mx-auto">
                 Used to describe actions that have been completed in the past
-                and have a connection to another past event.
+                and happened before another past event.
             </p>
             <Sentences client:only="react" sentences={fordatidExamples} />
             <div class="divider mb-10"></div>
             <h3>
                 <Tooltip tooltip="Imperative">Imperativ</Tooltip>
             </h3>
-            <p>Used to give commands or orders.</p>
+            <p class="max-w-xl mx-auto">Used to give commands or orders.</p>
             <Sentences client:only="react" sentences={imperativExamples} />
         </article>
     </div>

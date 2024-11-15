@@ -359,7 +359,7 @@ export const burdeExamples: SentencesType = [
     },
     {
       danish: "burde",
-      explanation: "should have",
+      explanation: "should",
       bottomExplanation: "Verb in past form",
       bottomColor: COLORS.Verb,
     },
