@@ -40,7 +40,7 @@ if (!hasChildren) {
         <li>
             <a class={isActivePath ? "active" : ""} href={fullPath}>
                 <!-- remove the numbers in the front of each page number -->
-                {parent.split(". ").slice(1).join("")}
+                {parent.split(". ").slice(1).join("") || "Home"}
             </a>
         </li>
     )
