@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import ThemeSwitcher from "../../components/ThemeSwitcher.tsx";
 import poo from "../../images/poo.svg";
 import Tooltip from "../Tooltip.astro";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
 interface Props {
     title: string;
@@ -13,7 +14,7 @@ const { title, tooltip } = Astro.props;
 ---
 
 <div
-    class="navbar bg-base-100 p-4 fixed top-0 left-0 right-0 max-w-screen-2xl mx-auto z-50 shadow-md rounded-b-lg pl-80"
+    class="hidden lg:flex navbar bg-base-100 p-4 fixed top-0 left-0 right-0 max-w-screen-2xl mx-auto z-50 shadow-md rounded-b-lg pl-80"
 >
     <div class="navbar-start">
         <a href={`${import.meta.env.BASE_URL}/`} class="btn btn-ghost text-xl"
@@ -22,14 +23,35 @@ const { title, tooltip } = Astro.props;
             danish</a
         >
     </div>
-    <div class="navbar-center hidden lg:flex">
+    <div class="navbar-center">
         <Tooltip bottom tooltip={tooltip}>
-            <h1 class="text-3xl">
+            <h1 class="text-3xl text-center">
                 {title}
             </h1>
         </Tooltip>
     </div>
-    <div class="navbar-end">
+    <div class="navbar-end flex">
         <ThemeSwitcher client:only="react" />
     </div>
+</div>
+
+<div
+    class="lg:hidden navbar bg-base-100 p-4 fixed top-0 left-0 right-0 max-w-screen-2xl mx-auto z-50 shadow-md rounded-b-lg"
+>
+    <div class="navbar-start">
+        <label
+            for="navigation-drawer"
+            class="btn btn-secondary btn-square drawer-button"
+        >
+            <Bars3Icon />
+        </label>
+    </div>
+    <div class="navbar-center">
+        <Tooltip bottom tooltip={tooltip}>
+            <h1 class="text-xl text-center">
+                {title}
+            </h1>
+        </Tooltip>
+    </div>
+    <div class="navbar-end"></div>
 </div>

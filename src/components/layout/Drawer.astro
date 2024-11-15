@@ -1,9 +1,6 @@
 ---
 import DrawerComponent from "./DrawerComponent.astro";
 
-/**
- * Pages in the form: Home, Structure/Page1, Structure/Page2, Structure/Inner/Page3 etc.
- */
 const allPages = [
     "Home",
     ...Object.keys(import.meta.glob(["../../pages/**/*.astro"]))
@@ -34,13 +31,15 @@ for (const page of allPages) {
 }
 ---
 
-<div class="drawer-side">
+<div class="drawer-side h-full">
     <label
         for="navigation-drawer"
         aria-label="close sidebar"
         class="drawer-overlay"></label>
 
-    <ul class="menu text-base-content min-h-full w-80 p-4">
+    <ul
+        class="menu text-base-content min-h-full w-80 p-4 bg-base-100 text-2xl lg:text-base"
+    >
         <div class="mt-20"></div>
         {
             Object.entries(nestedPages).map(([parent, children]) => (
