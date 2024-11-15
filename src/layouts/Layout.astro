@@ -1,9 +1,4 @@
 ---
-import Header from "../components/Header.tsx";
-import ThemeSwitcher from "../components/ThemeSwitcher.tsx";
-import { Image } from "astro:assets";
-import poo from "../images/poo.svg";
-
 import Drawer from "../components/layout/Drawer.astro";
 import NavBar from "../components/layout/NavBar.astro";
 
@@ -60,7 +55,7 @@ const {
                 />
 
                 <div class="drawer-content pt-40">
-                    <NavBar title={english} />
+                    <NavBar title={english} tooltip={translation} />
                     <slot />
                     <div class="divider mb-10"></div>
                 </div>
