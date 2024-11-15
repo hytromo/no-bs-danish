@@ -3,9 +3,7 @@ import Header from "../components/Header.tsx";
 import ThemeSwitcher from "../components/ThemeSwitcher.tsx";
 import { Image } from "astro:assets";
 import poo from "../images/poo.svg";
-import { Breadcrumbs } from "astro-breadcrumbs";
 
-import "astro-breadcrumbs/breadcrumbs.css";
 import Drawer from "../components/layout/Drawer.astro";
 import NavBar from "../components/layout/NavBar.astro";
 
@@ -17,7 +15,7 @@ interface Props {
 }
 
 const {
-    title: { text: danish, tooltip: translation },
+    title: { text: english, tooltip: translation },
 } = Astro.props;
 ---
 
@@ -51,9 +49,9 @@ const {
         href={`${import.meta.env.BASE_URL}/favicon.svg`}
     />
     <meta name="generator" content={Astro.generator} />
-    <title>{danish}</title>
+    <title>{english}</title>
     <body class="bg-base-100 min-h-screen">
-        <NavBar />
+        <NavBar title={english} />
 
         <main class="max-w-screen-2xl m-auto">
             <div class="drawer lg:drawer-open">
@@ -63,9 +61,9 @@ const {
                     class="drawer-toggle"
                 />
 
-                <div class="drawer-content">
-                    <Header text={danish} tooltip={translation} />
-                    <div class="divider mb-10"></div>
+                <div class="drawer-content pt-40">
+                    <!-- <Header text={english} tooltip={translation} /> -->
+                    <!-- <div class="divider mb-10"></div> -->
                     <slot />
                     <div class="divider mb-10"></div>
                 </div>
