@@ -32,15 +32,18 @@ export default function Word({
   return (
     <div
       style={{ width: "max-content" }}
-      className={`flex flex-col items-center ${className ? className : ""}`}
+      className={`flex flex-col items-center px-5 ${className ? className : ""}`}
     >
-      <div className={colorChoice.class} ref={explanationDiv}>
+      <div
+        className={[colorChoice.class, "whitespace-nowrap"].join(" ")}
+        ref={explanationDiv}
+      >
         {explanation}
       </div>
       <Bracket rotate={false} color={colorChoice.hex} />
 
       <div
-        className={`${WordCss.Word} ${colorChoice.class} font-bold text-xl`}
+        className={`${WordCss.Word} ${colorChoice.class} font-bold text-xl whitespace-nowrap`}
         ref={childrenDiv}
       >
         {children}
@@ -50,7 +53,10 @@ export default function Word({
         <>
           <Bracket rotate color={bottomColor?.hex || colorChoice.hex} />
           <div
-            className={bottomColor?.class || colorChoice.class}
+            className={[
+              bottomColor?.class || colorChoice.class,
+              "whitespace-nowrap",
+            ].join(" ")}
             ref={bottomExplanationDiv}
           >
             {bottomExplanation}

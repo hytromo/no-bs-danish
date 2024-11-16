@@ -99,5 +99,5 @@ export const subordinateExamples: SentencesType = [
       explanation: "she is tired",
       bottomExplanation: "subordinate clause / ledsætning",
     },
-  ]
+  ],
 ];

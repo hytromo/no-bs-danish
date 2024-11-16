@@ -1,17 +1,15 @@
 ---
 interface Props {
-    tooltip: string;
-    bottom?: boolean;
-    className?: string;
+  tooltip: string;
+  bottom?: boolean;
+  className?: string;
 }
 const { tooltip, className, bottom } = Astro.props;
 ---
 
 <span
-    class={["tooltip", className || "", bottom ? "tooltip-bottom" : ""].join(
-        " ",
-    )}
-    data-tip={tooltip}
+  class={["tooltip", className || "", bottom ? "tooltip-bottom" : ""].join(" ")}
+  data-tip={tooltip}
 >
-    <slot />
+  <slot />
 </span>

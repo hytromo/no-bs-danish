@@ -2,9 +2,9 @@
 import type { NestedPages } from "./Drawer.astro";
 
 interface Props {
-    parent: string;
-    children: NestedPages | null;
-    fullPath: string;
+  parent: string;
+  children: NestedPages | null;
+  fullPath: string;
 }
 
 const { parent, children, fullPath } = Astro.props;
@@ -13,35 +13,34 @@ const decodedURI = decodeURI(Astro.url.pathname);
 const isActivePath = !hasChildren && decodedURI === fullPath;
 
 if (!hasChildren) {
-    console.log(decodedURI, "==", fullPath, "?");
+  console.log(decodedURI, "==", fullPath, "?");
 }
 ---
 
 {
-    hasChildren && (
-        <li>
-            <details open>
-                <summary>{parent}</summary>
-                <ul>
-                    {Object.entries(children).map(([child, grandChildren]) => (
-                        <Astro.self
-                            parent={child}
-                            children={grandChildren}
-                            fullPath={`${fullPath}/${child}`}
-                        />
-                    ))}
-                </ul>
-            </details>
-        </li>
-    )
+  hasChildren && (
+    <li>
+      <details open>
+        <summary>{parent}</summary>
+        <ul>
+          {Object.entries(children).map(([child, grandChildren]) => (
+            <Astro.self
+              parent={child}
+              children={grandChildren}
+              fullPath={`${fullPath}/${child}`}
+            />
+          ))}
+        </ul>
+      </details>
+    </li>
+  )
 }
 {
-    !hasChildren && parent !== "" && (
-        <li>
-            <a class={isActivePath ? "active" : ""} href={fullPath}>
-                <!-- remove the numbers in the front of each page number -->
-                {parent.split(". ").slice(1).join("") || "Home"}
-            </a>
-        </li>
-    )
+  !hasChildren && parent !== "" && (
+    <li>
+      <a class={isActivePath ? "active" : ""} href={fullPath}>
+        {parent.split(". ").slice(1).join("") || "Home"}
+      </a>
+    </li>
+  )
 }

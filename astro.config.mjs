@@ -8,5 +8,5 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind()],
-  base: '/no-bs-danish'
+  base: "/no-bs-danish",
 });

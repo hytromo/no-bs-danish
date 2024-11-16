@@ -3,64 +3,59 @@ import Drawer from "../components/layout/Drawer.astro";
 import NavBar from "../components/layout/NavBar.astro";
 
 interface Props {
-    title: {
-        text: string;
-        tooltip: string;
-    };
+  title: {
+    text: string;
+    tooltip: string;
+  };
 }
 
 const {
-    title: { text: english, tooltip: translation },
+  title: { text: english, tooltip: translation },
 } = Astro.props;
 ---
 
-<html lang="en">
-    <script is:inline>
-        try {
-            // either set the remembered user theme or use the system theme
-            // the location of this script is here in order to avoid flashing the default theme
-            const chosenTheme =
-                localStorage.getItem("theme") ||
-                (window.matchMedia("(prefers-color-scheme: dark)").matches
-                    ? "forest"
-                    : "nord");
+<html lang="en-US">
+  <script is:inline>
+    try {
+      // either set the remembered user theme or use the system theme
+      // the location of this script is here in order to avoid flashing the default theme
+      const chosenTheme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "forest"
+          : "nord");
 
-            console.log(
-                "Setting theme to",
-                chosenTheme,
-                localStorage.getItem("theme"),
-            );
-            document.documentElement.setAttribute("data-theme", chosenTheme);
-        } catch (e) {
-            console.error(e);
-        }
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="description" content="A concise webpage for Danish Grammar." />
-    <meta name="viewport" content="width=device-width" />
-    <link
-        rel="icon"
-        type="image/svg+xml"
-        href={`${import.meta.env.BASE_URL}/favicon.svg`}
-    />
-    <meta name="generator" content={Astro.generator} />
-    <title>{english}</title>
-    <body class="bg-base-100 min-h-screen">
-        <main class="max-w-screen-2xl m-auto">
-            <div class="drawer lg:drawer-open">
-                <input
-                    id="navigation-drawer"
-                    type="checkbox"
-                    class="drawer-toggle"
-                />
+      console.log(
+        "Setting theme to",
+        chosenTheme,
+        localStorage.getItem("theme"),
+      );
+      document.documentElement.setAttribute("data-theme", chosenTheme);
+    } catch (e) {
+      console.error(e);
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A concise webpage for Danish Grammar." />
+  <meta name="viewport" content="width=device-width" />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href={`${import.meta.env.BASE_URL}/favicon.svg`}
+  />
+  <meta name="generator" content={Astro.generator} />
+  <title>{english}</title>
+  <body class="bg-base-100 min-h-screen">
+    <main class="max-w-screen-2xl m-auto">
+      <div class="drawer lg:drawer-open">
+        <input id="navigation-drawer" type="checkbox" class="drawer-toggle" />
 
-                <div class="drawer-content pt-40">
-                    <NavBar title={english} tooltip={translation} />
-                    <slot />
-                    <div class="divider mb-10"></div>
-                </div>
-                <Drawer />
-            </div>
-        </main>
-    </body>
+        <div class="drawer-content p-5 lg:p-10 !pt-40 text-xl lg:text-base">
+          <NavBar title={english} tooltip={translation} />
+          <slot />
+        </div>
+        <Drawer />
+      </div>
+    </main>
+  </body>
 </html>
