@@ -18,10 +18,15 @@ export default function Sentences({
   wordClassName?: string;
 }) {
   return (
-    <div className="flex flex-col items-center overflow-x-auto bg-info-content rounded-lg py-10 gap-y-10">
+    <div className="flex flex-col overflow-x-auto bg-info-content lg:items-center rounded-lg py-10 gap-y-10">
       {sentences.map((example, index1) => (
-        <Fragment key={index1}>
-          <div className="inline-flex gap-x-5 p-5 max-w-full px-8">
+        <div
+          style={{ width: "max-content" }}
+          key={index1}>
+          <div
+            style={{ width: "max-content" }}
+            className="inline-flex gap-x-5 p-5 px-8"
+          >
             {example.map((word, index2) => (
               <Word
                 key={`${index1}-${index2}`}
@@ -37,15 +42,9 @@ export default function Sentences({
           {/* {index1 !== sentences.length - 1 && <div className="divider" />} */}
           {/* let's make the divider have the full width of this horizontally scrollable container: */}
           {index1 !== sentences.length - 1 && (
-            <div
-              style={{
-                flexBasis: "100%",
-                flexShrink: "0",
-              }}
-              className="divider"
-            />
+            <div className="divider w-full" />
           )}
-        </Fragment>
+        </div>
       ))}
     </div>
   );
