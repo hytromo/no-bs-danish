@@ -5,8 +5,8 @@ import Bracket from "./Bracket";
 import WordCss from "./Word.module.css";
 
 const COLOR = {
-  dark: { class: "text-white", hex: "#fff" },
-  white: { class: "text-black", hex: "#000" },
+  dark: { class: "text-info", hex: "#00b5ff" },
+  white: { class: "text-info", hex: "#b48ead" },
 };
 
 export default function Word({

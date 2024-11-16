@@ -34,7 +34,7 @@ function ThemeButton({
   );
 }
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher({ className }: { className?: string }) {
   const [selectedSwitchOption, setSelectedSwitchOption] = useState<ThemeType>(
     () => (window.localStorage.getItem("theme") as ThemeType) || "",
   );
@@ -56,8 +56,7 @@ export default function ThemeSwitcher() {
   }, []);
 
   return (
-    // let's send this to the right:
-    <div className="flex">
+    <div className={className || "flex"} >
       <div className="inline-flex ml-auto space-x-2">
         <ThemeButton
           theme={""}
@@ -85,6 +84,6 @@ export default function ThemeSwitcher() {
           <SunIcon className="size-4" />
         </ThemeButton>
       </div>
-    </div>
+    </div >
   );
 }
