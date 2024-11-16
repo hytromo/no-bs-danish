@@ -39,8 +39,6 @@ export default function Sentences({
               </Word>
             ))}
           </div>
-          {/* {index1 !== sentences.length - 1 && <div className="divider" />} */}
-          {/* let's make the divider have the full width of this horizontally scrollable container: */}
           {index1 !== sentences.length - 1 && (
             <div className="divider w-full" />
           )}
