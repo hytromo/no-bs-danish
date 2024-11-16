@@ -2,6 +2,7 @@
 import Sentences from "../../components/Sentence/Sentences";
 import Section from "../../components/Section/Section.astro";
 import Tooltip from "../../components/Tooltip.astro";
+import Table from "../../components/Table.astro";
 import Layout from "../../layouts/Layout.astro";
 import { COLORS } from "../../utils/fixedColors";
 ---
@@ -121,68 +122,62 @@ import { COLORS } from "../../utils/fixedColors";
       them in their specific form (bestemt form), so the suffixes are the same.
     </p>
 
-    <div class="flex justify-center mb-8">
-      <table class="prose-table max-w-4xl text-lg">
-        <thead>
-          <tr>
-            <th>
-              <Tooltip tooltip="Ental">Singular</Tooltip>
-            </th>
-            <th></th>
-            <th>
-              <Tooltip tooltip="Flertal">Plural</Tooltip>
-            </th>
-          </tr>
-          <tr>
-            <th
-              ><Tooltip tooltip="Ubestemt form">Non-specific form</Tooltip>
-            </th>
-            <th><Tooltip tooltip="Bestemt form">Specific form</Tooltip> </th>
-            <th
-              ><Tooltip tooltip="Ubestemt form">Non-specific form</Tooltip>
-            </th>
-            <th><Tooltip tooltip="Bestemt form">Specific form</Tooltip> </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              e<span class="font-bold text-xl">n</span> bil
-            </td>
-            <td>
-              bile<span class="font-bold text-xl">n</span>
-            </td>
+    <Table>
+      <thead>
+        <tr>
+          <th>
+            <Tooltip tooltip="Ental">Singular</Tooltip>
+          </th>
+          <th></th>
+          <th>
+            <Tooltip tooltip="Flertal">Plural</Tooltip>
+          </th>
+        </tr>
+        <tr>
+          <th><Tooltip tooltip="Ubestemt form">Non-specific form</Tooltip> </th>
+          <th><Tooltip tooltip="Bestemt form">Specific form</Tooltip> </th>
+          <th><Tooltip tooltip="Ubestemt form">Non-specific form</Tooltip> </th>
+          <th><Tooltip tooltip="Bestemt form">Specific form</Tooltip> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            e<span class="font-bold text-xl">n</span> bil
+          </td>
+          <td>
+            bile<span class="font-bold text-xl">n</span>
+          </td>
 
-            <td>
-              bil<span class="font-bold text-xl">er</span>
-            </td>
-            <td>biler<span class="font-bold text-xl">ne</span> </td>
-          </tr>
+          <td>
+            bil<span class="font-bold text-xl">er</span>
+          </td>
+          <td>biler<span class="font-bold text-xl">ne</span> </td>
+        </tr>
 
-          <tr>
-            <td>
-              e<span class="font-bold text-xl">t</span> bord
-            </td>
-            <td>
-              borde<span class="font-bold text-xl">t</span>
-            </td>
-            <td>
-              bord<span class="font-bold text-xl">e</span>
-            </td>
-            <td>
-              borde<span class="font-bold text-xl">ne</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              e<span class="font-bold text-xl">t</span> år
-            </td>
-            <td>åre<span class="font-bold text-xl">t</span></td>
-            <td>år</td>
-            <td>år<span class="font-bold text-xl">ene</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <tr>
+          <td>
+            e<span class="font-bold text-xl">t</span> bord
+          </td>
+          <td>
+            borde<span class="font-bold text-xl">t</span>
+          </td>
+          <td>
+            bord<span class="font-bold text-xl">e</span>
+          </td>
+          <td>
+            borde<span class="font-bold text-xl">ne</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            e<span class="font-bold text-xl">t</span> år
+          </td>
+          <td>åre<span class="font-bold text-xl">t</span></td>
+          <td>år</td>
+          <td>år<span class="font-bold text-xl">ene</span></td>
+        </tr>
+      </tbody>
+    </Table>
   </Section>
 </Layout>

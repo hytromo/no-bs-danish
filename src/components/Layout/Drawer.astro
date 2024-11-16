@@ -3,61 +3,61 @@ import ThemeSwitcher from "../ThemeSwitcher.tsx";
 import DrawerComponent from "./DrawerComponent.astro";
 
 const allPages = [
-    "Home",
-    ...Object.keys(import.meta.glob(["../../pages/**/*.astro"]))
-        .map((post) =>
-            post
-                .replace(/\.astro$/, "")
-                .replace("../../pages/", "")
-                .replace(/\/index$/, ""),
-        )
-        .filter((p) => p && p !== "index")
-        .sort(),
+  "Home",
+  ...Object.keys(import.meta.glob(["../../pages/**/*.astro"]))
+    .map((post) =>
+      post
+        .replace(/\.astro$/, "")
+        .replace("../../pages/", "")
+        .replace(/\/index$/, ""),
+    )
+    .filter((p) => p && p !== "index")
+    .sort(),
 ];
 
 export type NestedPages = {
-    [key: string]: NestedPages | null;
+  [key: string]: NestedPages | null;
 };
 
 const nestedPages: NestedPages = {};
 for (const page of allPages) {
-    const parts = page.split("/");
-    let current = nestedPages;
-    for (const part of parts) {
-        if (!current[part]) {
-            current[part] = {};
-        }
-        current = current[part] as NestedPages;
+  const parts = page.split("/");
+  let current = nestedPages;
+  for (const part of parts) {
+    if (!current[part]) {
+      current[part] = {};
     }
+    current = current[part] as NestedPages;
+  }
 }
 ---
 
-<div class="drawer-side h-full">
-    <label
-        for="navigation-drawer"
-        aria-label="close sidebar"
-        class="drawer-overlay"></label>
+<div class="drawer-side">
+  <label
+    for="navigation-drawer"
+    aria-label="close sidebar"
+    class="drawer-overlay"></label>
 
-    <ul
-        class="menu text-base-content min-h-full w-80 p-4 bg-base-100 text-xl lg:text-base"
-    >
-        <div class="mt-20"></div>
-        {
-            Object.entries(nestedPages).map(([parent, children]) => (
-                <DrawerComponent
-                    parent={parent}
-                    children={children}
-                    fullPath={
-                        parent === "Home"
-                            ? `${import.meta.env.BASE_URL}/`
-                            : `${import.meta.env.BASE_URL}/${parent}`
-                    }
-                />
-            ))
-        }
-        <div class="flex flex-col lg:hidden justify-center items-center">
-            <div class="divider"></div>
-            <ThemeSwitcher client:only="react" />
-        </div>
-    </ul>
+  <ul
+    class="menu text-base-content min-h-full w-80 p-4 bg-base-100 text-xl lg:text-base"
+  >
+    <div class="mt-20"></div>
+    {
+      Object.entries(nestedPages).map(([parent, children]) => (
+        <DrawerComponent
+          parent={parent}
+          children={children}
+          fullPath={
+            parent === "Home"
+              ? `${import.meta.env.BASE_URL}/`
+              : `${import.meta.env.BASE_URL}/${parent}`
+          }
+        />
+      ))
+    }
+    <div class="flex flex-col lg:hidden justify-center items-center">
+      <div class="divider"></div>
+      <ThemeSwitcher client:only="react" />
+    </div>
+  </ul>
 </div>

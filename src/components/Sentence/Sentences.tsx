@@ -17,11 +17,9 @@ export default function Sentences({
   wordClassName?: string;
 }) {
   return (
-    <div className="flex flex-col overflow-x-auto bg-info-content lg:items-center rounded-lg py-10 gap-y-10">
+    <div className="max-w-full flex flex-col overflow-x-auto bg-info-content lg:items-center rounded-lg py-10 gap-y-10">
       {sentences.map((example, index1) => (
-        <div
-          style={{ width: "max-content" }}
-          key={index1}>
+        <div style={{ width: "max-content" }} key={index1}>
           <div
             style={{ width: "max-content" }}
             className="inline-flex gap-x-5 p-5 px-8"

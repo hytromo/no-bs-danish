@@ -6,8 +6,10 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<article class="prose prose-lg max-w-none text-center mb-10">
+<article class="prose prose-lg max-w-none text-center items-center mb-10">
   <h3>{title}</h3>
-  <slot />
+  <div class="flex flex-col items-center">
+    <slot />
+  </div>
   <div class="divider mb-10"></div>
 </article>

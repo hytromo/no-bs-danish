@@ -56,7 +56,7 @@ export default function ThemeSwitcher({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div className={className || "flex"} >
+    <div className={className || "flex"}>
       <div className="inline-flex ml-auto space-x-2">
         <ThemeButton
           theme={""}
@@ -84,6 +84,6 @@ export default function ThemeSwitcher({ className }: { className?: string }) {
           <SunIcon className="size-4" />
         </ThemeButton>
       </div>
-    </div >
+    </div>
   );
 }

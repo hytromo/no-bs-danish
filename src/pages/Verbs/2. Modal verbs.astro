@@ -2,6 +2,7 @@
 import Section from "../../components/Section/Section.astro";
 import Sentences from "../../components/Sentence/Sentences";
 import Tooltip from "../../components/Tooltip.astro";
+import Table from "../../components/Table.astro";
 import Layout from "../../layouts/Layout.astro";
 import {
   burdeExamples,
@@ -30,199 +31,167 @@ import {
   </Section>
 
   <Section title="Ville">
-    <div class="flex flex-col items-center mb-7">
-      <p class="max-w-2xl mx-auto text-justify hyphens-auto">
-        Use for wishes or intentions
-      </p>
-      <table class="prose-table max-w-3xl text-lg">
-        <thead>
-          <tr>
-            <th>Infinitiv</th>
-            <th>Nutid</th>
-            <th>Datid</th>
-            <th>Førnutid</th>
-            <th>Førdatid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Tooltip tooltip="to want">at ville</Tooltip></td>
-            <td><Tooltip tooltip="want">vil</Tooltip></td>
-            <td><Tooltip tooltip="wanted">ville</Tooltip></td>
-            <td><Tooltip tooltip="have wanted">har villet</Tooltip></td>
-            <td><Tooltip tooltip="had wanted">havde villet</Tooltip></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Use for wishes or intentions
+    </p>
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to want">at ville</Tooltip></td>
+          <td><Tooltip tooltip="want">vil</Tooltip></td>
+          <td><Tooltip tooltip="wanted">ville</Tooltip></td>
+          <td><Tooltip tooltip="have wanted">har villet</Tooltip></td>
+          <td><Tooltip tooltip="had wanted">havde villet</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
     <Sentences client:only="react" sentences={villeExamples} />
   </Section>
 
   <Section title="Skulle">
-    <div class="flex flex-col items-center mb-7">
-      <p class="max-w-2xl mx-auto text-justify hyphens-auto">
-        Use for plans, strong suggestions or obligations
-      </p>
-      <table class="prose-table max-w-3xl text-lg">
-        <thead>
-          <tr>
-            <th>Infinitiv</th>
-            <th>Nutid</th>
-            <th>Datid</th>
-            <th>Førnutid</th>
-            <th>Førdatid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Tooltip tooltip="to have to">at skulle</Tooltip></td>
-            <td><Tooltip tooltip="must">skal</Tooltip></td>
-            <td><Tooltip tooltip="should">skulle</Tooltip></td>
-            <td><Tooltip tooltip="have had to">har skullet</Tooltip></td>
-            <td><Tooltip tooltip="had had to">havde skullet</Tooltip></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Use for plans, strong suggestions or obligations
+    </p>
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to have to">at skulle</Tooltip></td>
+          <td><Tooltip tooltip="must">skal</Tooltip></td>
+          <td><Tooltip tooltip="should">skulle</Tooltip></td>
+          <td><Tooltip tooltip="have had to">har skullet</Tooltip></td>
+          <td><Tooltip tooltip="had had to">havde skullet</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
     <Sentences client:only="react" sentences={skulleExamples} />
   </Section>
 
   <Section title="Kunne">
-    <div class="flex flex-col items-center mb-7">
-      <p class="max-w-2xl mx-auto text-justify hyphens-auto">
-        Use to express ability, possibility or permission
-      </p>
-      <table class="prose-table max-w-3xl text-lg">
-        <thead>
-          <tr>
-            <th>Infinitiv</th>
-            <th>Nutid</th>
-            <th>Datid</th>
-            <th>Førnutid</th>
-            <th>Førdatid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Tooltip tooltip="to have to">at skulle</Tooltip></td>
-            <td><Tooltip tooltip="must">skal</Tooltip></td>
-            <td><Tooltip tooltip="should">skulle</Tooltip></td>
-            <td><Tooltip tooltip="have had to">har skullet</Tooltip></td>
-            <td><Tooltip tooltip="had had to">havde skullet</Tooltip></td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="prose-table max-w-3xl text-lg">
-        <thead>
-          <tr>
-            <th>Infinitiv</th>
-            <th>Nutid</th>
-            <th>Datid</th>
-            <th>Førnutid</th>
-            <th>Førdatid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Tooltip tooltip="to can">at kunne</Tooltip></td>
-            <td><Tooltip tooltip="can">kan</Tooltip></td>
-            <td><Tooltip tooltip="could">kunne</Tooltip></td>
-            <td><Tooltip tooltip="have been able to">har kunnet</Tooltip></td>
-            <td><Tooltip tooltip="had been able to ">havde kunnet</Tooltip></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Use to express ability, possibility or permission
+    </p>
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to can">at kunne</Tooltip></td>
+          <td><Tooltip tooltip="can">kan</Tooltip></td>
+          <td><Tooltip tooltip="could">kunne</Tooltip></td>
+          <td><Tooltip tooltip="have been able to">har kunnet</Tooltip></td>
+          <td><Tooltip tooltip="had been able to ">havde kunnet</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
     <Sentences client:only="react" sentences={kunneExamples} />
   </Section>
 
   <Section title="Burde">
-    <div class="flex flex-col items-center mb-7">
-      <p class="max-w-2xl mx-auto text-justify hyphens-auto">
-        Use to express advice, recommendations or expectations, often with an
-        ethical tone
-      </p>
-      <table class="prose-table max-w-3xl text-lg">
-        <thead>
-          <tr>
-            <th>Infinitiv</th>
-            <th>Nutid</th>
-            <th>Datid</th>
-            <th>Førnutid</th>
-            <th>Førdatid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Tooltip tooltip="to should">at burde</Tooltip></td>
-            <td><Tooltip tooltip="should">bør</Tooltip></td>
-            <td><Tooltip tooltip="should">burde</Tooltip></td>
-            <td><Tooltip tooltip="should have">har burdet</Tooltip></td>
-            <td><Tooltip tooltip="should had">havde burdet</Tooltip></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Use to express advice, recommendations or expectations, often with an
+      ethical tone
+    </p>
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to should">at burde</Tooltip></td>
+          <td><Tooltip tooltip="should">bør</Tooltip></td>
+          <td><Tooltip tooltip="should">burde</Tooltip></td>
+          <td><Tooltip tooltip="should have">har burdet</Tooltip></td>
+          <td><Tooltip tooltip="should had">havde burdet</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
     <Sentences client:only="react" sentences={burdeExamples} />
   </Section>
 
   <Section title="Måtte">
-    <div class="flex flex-col items-center mb-7">
-      <p class="max-w-2xl mx-auto text-justify hyphens-auto">
-        Use to express permission, possibility, or necessity, it is similar to
-        "may" or "might" in English, depending on the context
-      </p>
-      <table class="prose-table max-w-3xl text-lg">
-        <thead>
-          <tr>
-            <th>Infinitiv</th>
-            <th>Nutid</th>
-            <th>Datid</th>
-            <th>Førnutid</th>
-            <th>Førdatid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Tooltip tooltip="to have to">at måtte</Tooltip></td>
-            <td><Tooltip tooltip="may">må</Tooltip></td>
-            <td><Tooltip tooltip="must">måtte</Tooltip></td>
-            <td><Tooltip tooltip="have had to">har måttet</Tooltip></td>
-            <td><Tooltip tooltip="had had to">havde måttet</Tooltip></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Use to express permission, possibility, or necessity, it is similar to
+      "may" or "might" in English, depending on the context
+    </p>
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to have to">at måtte</Tooltip></td>
+          <td><Tooltip tooltip="may">må</Tooltip></td>
+          <td><Tooltip tooltip="must">måtte</Tooltip></td>
+          <td><Tooltip tooltip="have had to">har måttet</Tooltip></td>
+          <td><Tooltip tooltip="had had to">havde måttet</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
     <Sentences client:only="react" sentences={matteExamples} />
   </Section>
 
   <Section title="Turde">
-    <div class="flex flex-col items-center mb-7">
-      <p class="max-w-2xl mx-auto text-justify hyphens-auto">
-        Use to express courage or the lack of courage to do something, similar
-        to "dare" in English
-      </p>
-      <table class="prose-table max-w-3xl text-lg">
-        <thead>
-          <tr>
-            <th>Infinitiv</th>
-            <th>Nutid</th>
-            <th>Datid</th>
-            <th>Førnutid</th>
-            <th>Førdatid</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><Tooltip tooltip="to dare">at turde</Tooltip></td>
-            <td><Tooltip tooltip="dare">tør</Tooltip></td>
-            <td><Tooltip tooltip="dared">turde</Tooltip></td>
-            <td><Tooltip tooltip="have dared">har turdet</Tooltip></td>
-            <td><Tooltip tooltip="had dared">havde turdet</Tooltip></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Use to express courage or the lack of courage to do something, similar to
+      "dare" in English
+    </p>
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to dare">at turde</Tooltip></td>
+          <td><Tooltip tooltip="dare">tør</Tooltip></td>
+          <td><Tooltip tooltip="dared">turde</Tooltip></td>
+          <td><Tooltip tooltip="have dared">har turdet</Tooltip></td>
+          <td><Tooltip tooltip="had dared">havde turdet</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
     <Sentences client:only="react" sentences={turdeExamples} />
   </Section>
 </Layout>

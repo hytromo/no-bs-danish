@@ -2,6 +2,7 @@
 import Section from "../../components/Section/Section.astro";
 import Sentences from "../../components/Sentence/Sentences";
 import Tooltip from "../../components/Tooltip.astro";
+import Table from "../../components/Table.astro";
 import Layout from "../../layouts/Layout.astro";
 import {
   nWordExamples,
@@ -19,63 +20,61 @@ import { COLORS } from "../../utils/fixedColors";
 >
   <Section title="Three forms">
     <p>Adjectives have three forms</p>
-    <div class="flex justify-center mb-7">
-      <table class="prose-table max-w-lg text-lg">
-        <thead>
-          <tr>
-            <th>N-word</th>
-            <th>T-word</th>
-            <th>Plural</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class={COLORS.NWord.class}>
-              <Tooltip tooltip="big"> stor </Tooltip>
-            </td>
-            <td class={COLORS.TWord.class}>
-              <Tooltip tooltip="big"> stort </Tooltip>
-            </td>
-            <td class={COLORS.Important.class}>
-              <Tooltip tooltip="big"> store </Tooltip>
-            </td>
-          </tr>
-          <tr>
-            <td class={COLORS.NWord.class}>
-              <Tooltip tooltip="red"> rød </Tooltip>
-            </td>
-            <td class={COLORS.TWord.class}>
-              <Tooltip tooltip="red"> rødt </Tooltip>
-            </td>
-            <td class={COLORS.Important.class}>
-              <Tooltip tooltip="red"> røde </Tooltip>
-            </td>
-          </tr>
-          <tr>
-            <td class={COLORS.NWord.class}>
-              <Tooltip tooltip="old"> gammel </Tooltip>
-            </td>
-            <td class={COLORS.TWord.class}>
-              <Tooltip tooltip="old"> gammelt </Tooltip>
-            </td>
-            <td class={COLORS.Important.class}>
-              <Tooltip tooltip="old"> gamle </Tooltip>
-            </td>
-          </tr>
-          <tr>
-            <td class={COLORS.NWord.class}>
-              <Tooltip tooltip="used"> brugt </Tooltip>
-            </td>
-            <td class={COLORS.TWord.class}>
-              <Tooltip tooltip="used"> brugt </Tooltip>
-            </td>
-            <td class={COLORS.Important.class}>
-              <Tooltip tooltip="used"> brugte </Tooltip>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <Table>
+      <thead>
+        <tr>
+          <th>N-word</th>
+          <th>T-word</th>
+          <th>Plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class={COLORS.NWord.class}>
+            <Tooltip tooltip="big"> stor </Tooltip>
+          </td>
+          <td class={COLORS.TWord.class}>
+            <Tooltip tooltip="big"> stort </Tooltip>
+          </td>
+          <td class={COLORS.Important.class}>
+            <Tooltip tooltip="big"> store </Tooltip>
+          </td>
+        </tr>
+        <tr>
+          <td class={COLORS.NWord.class}>
+            <Tooltip tooltip="red"> rød </Tooltip>
+          </td>
+          <td class={COLORS.TWord.class}>
+            <Tooltip tooltip="red"> rødt </Tooltip>
+          </td>
+          <td class={COLORS.Important.class}>
+            <Tooltip tooltip="red"> røde </Tooltip>
+          </td>
+        </tr>
+        <tr>
+          <td class={COLORS.NWord.class}>
+            <Tooltip tooltip="old"> gammel </Tooltip>
+          </td>
+          <td class={COLORS.TWord.class}>
+            <Tooltip tooltip="old"> gammelt </Tooltip>
+          </td>
+          <td class={COLORS.Important.class}>
+            <Tooltip tooltip="old"> gamle </Tooltip>
+          </td>
+        </tr>
+        <tr>
+          <td class={COLORS.NWord.class}>
+            <Tooltip tooltip="used"> brugt </Tooltip>
+          </td>
+          <td class={COLORS.TWord.class}>
+            <Tooltip tooltip="used"> brugt </Tooltip>
+          </td>
+          <td class={COLORS.Important.class}>
+            <Tooltip tooltip="used"> brugte </Tooltip>
+          </td>
+        </tr>
+      </tbody>
+    </Table>
   </Section>
 
   <Section title="Plural form">
