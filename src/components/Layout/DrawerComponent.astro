@@ -12,9 +12,10 @@ const hasChildren = children && Object.keys(children).length > 0;
 const decodedURI = decodeURI(Astro.url.pathname);
 const isActivePath = !hasChildren && decodedURI === fullPath;
 
-
-console.log("hasChildren", hasChildren, decodedURI, "==", fullPath, "?", isActivePath);
 ---
+<script define:vars={{ hasChildren, decodedURI, fullPath, isActivePath }}>
+  console.log("hasChildren", hasChildren, decodedURI, "==", fullPath, "?", isActivePath);
+</script>
 
 {
   hasChildren && (
