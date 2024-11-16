@@ -9,14 +9,17 @@ interface Props {
 
 const { parent, children, fullPath } = Astro.props;
 const hasChildren = children && Object.keys(children).length > 0;
-const decodedURI = decodeURI(Astro.url.pathname);
-const isActivePath = !hasChildren && decodedURI === fullPath;
+let decodedURI = decodeURI(Astro.url.pathname);
+
+if (decodedURI.endsWith('/')) {
+    decodedURI = decodedURI.slice(0, -1);
+}
+
+const _fullPath = fullPath.endsWith('/') ? fullPath.slice(0, -1) : fullPath;
+
+const isActivePath = !hasChildren && decodedURI === _fullPath;
 
 ---
-<script define:vars={{ hasChildren, decodedURI, fullPath, isActivePath }}>
-  console.log("hasChildren", hasChildren, decodedURI, "==", fullPath, "?", isActivePath);
-</script>
-
 {
   hasChildren && (
     <li>
