@@ -12,9 +12,8 @@ const hasChildren = children && Object.keys(children).length > 0;
 const decodedURI = decodeURI(Astro.url.pathname);
 const isActivePath = !hasChildren && decodedURI === fullPath;
 
-if (!hasChildren) {
-  console.log(decodedURI, "==", fullPath, "?");
-}
+
+console.log("hasChildren", hasChildren, decodedURI, "==", fullPath, "?", isActivePath);
 ---
 
 {

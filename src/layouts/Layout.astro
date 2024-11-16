@@ -25,11 +25,6 @@ const {
           ? "forest"
           : "nord");
 
-      console.log(
-        "Setting theme to",
-        chosenTheme,
-        localStorage.getItem("theme"),
-      );
       document.documentElement.setAttribute("data-theme", chosenTheme);
     } catch (e) {
       console.error(e);
