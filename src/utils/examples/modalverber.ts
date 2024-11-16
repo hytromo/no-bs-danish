@@ -43,6 +43,7 @@ export const villeExamples: SentencesType = [
     },
   ],
 ];
+
 export const skulleExamples: SentencesType = [
   [
     {
@@ -173,7 +174,6 @@ export const skulleExamples: SentencesType = [
 ];
 
 export const kunneExamples: SentencesType = [
-  // Example with "kunne" (present tense)
   [
     {
       danish: "Kan du",
@@ -312,7 +312,6 @@ export const kunneExamples: SentencesType = [
   ],
 ];
 
-// TODO: are these examples correct?
 export const burdeExamples: SentencesType = [
   [
     {

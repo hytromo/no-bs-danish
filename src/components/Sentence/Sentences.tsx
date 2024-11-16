@@ -1,5 +1,4 @@
 import Word from "../Word/Word";
-import { Fragment } from "react";
 
 export type SentencesType = Array<
   Array<{

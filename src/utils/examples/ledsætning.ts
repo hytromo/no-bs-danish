@@ -36,8 +36,6 @@ export const genericExamples: SentencesType = [
   ],
 ];
 
-// let's describe the ledsætninger with each word individually, and then have the main clauses in a single object altogether, in order to focus
-// on the structure of the subordinate clauses:
 export const onlyFormExamples: SentencesType = [
   [
     {
