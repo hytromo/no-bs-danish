@@ -11,7 +11,7 @@ export const infinitivExamples: SentencesType = [
     },
     {
       danish: "højt er uhøfligt.",
-      explanation: "is rude.",
+      explanation: "loudly is rude.",
     },
   ],
   [
