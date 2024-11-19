@@ -40,13 +40,13 @@ export const sameTypeExamples: SentencesType = [
   ],
   [
     {
-      danish: "Han overvejer,",
-      explanation: "He considers,",
+      danish: "Han overvejer",
+      explanation: "He considers",
       bottomExplanation: "main clause / hovedsætning",
     },
     {
-      danish: "at tage på ferie,",
-      explanation: "to go on vacation,",
+      danish: "at tage på ferie",
+      explanation: "to go on vacation",
       bottomExplanation: "ledsætning / subordinate clause",
     },
     {
@@ -56,7 +56,7 @@ export const sameTypeExamples: SentencesType = [
       bottomColor: COLORS.Important,
     },
     {
-      danish: "at blive hjemme",
+      danish: "blive hjemme",
       explanation: "to stay at home",
       bottomExplanation: "ledsætning / subordinate clause",
     },

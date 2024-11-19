@@ -97,11 +97,16 @@ export const onlyFormExamples: SentencesType = [
       bottomColor: COLORS.MainClause,
     },
   ],
-  // let's repeat the above but also include an adverb in-between:
   [
     {
-      danish: "Før",
+      danish: "Før i tiden",
       explanation: "Before",
+    },
+    {
+      danish: "var",
+      explanation: "was",
+      bottomExplanation: "Verb",
+      bottomColor: COLORS.Verb,
     },
     {
       danish: "jeg",
@@ -114,12 +119,6 @@ export const onlyFormExamples: SentencesType = [
       explanation: "always",
       bottomExplanation: "Adverb",
       bottomColor: COLORS.Adverb,
-    },
-    {
-      danish: "var",
-      explanation: "was",
-      bottomExplanation: "Verb",
-      bottomColor: COLORS.Verb,
     },
     {
       danish: "sulten,",

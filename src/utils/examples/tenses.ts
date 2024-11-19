@@ -170,7 +170,7 @@ export const fordatidExamples: SentencesType = [
         "førdatid / had already eaten (before something else happened)",
     },
     {
-      danish: "mad, før jeg gik i seng i gar.",
+      danish: "mad, før jeg gik i seng i går.",
       explanation: "food, before I went to bed yesterday.",
     },
   ],
