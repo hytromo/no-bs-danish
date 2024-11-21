@@ -1,0 +1,76 @@
+---
+import Section from "../../components/Section/Section.astro";
+import Sentences from "../../components/Sentence/Sentences.tsx";
+import Layout from "../../layouts/Layout.astro";
+import {
+  sameTypeExamples,
+  subordinateExamples,
+} from "../../utils/examples/konjunktioner";
+---
+
+<Layout
+  title={{
+    text: "Conjunctions",
+    tooltip: "Konjunktioner",
+  }}
+>
+  <Section title="Words that connect sentences">
+    <p>There are two types of conjunctions</p>
+  </Section>
+
+  <Section title="Same-type conjunctions">
+    <p>
+      They connect sentences of the same kind. When they connect main clauses,
+      the conjunction itself is not part of any sentence, thus it does not
+      affect the word order in the main clauses, and they begin normally with
+      the subject.
+    </p>
+    <div class="italic">
+      <div>og</div>
+      <div>men</div>
+      <div>eller</div>
+      <div>for</div>
+      <div>så*</div>
+    </div>
+    <p>
+      * with the meaning of "so" only, see <a
+        href={`${import.meta.env.BASE_URL}/Structure of sentences/4. Tricky cases`}
+        >Tricky cases</a
+      >
+    </p>
+    <Sentences client:only="react" sentences={sameTypeExamples} />
+  </Section>
+
+  <Section title="Subordinate conjunctions">
+    <p>
+      They start subordinate clauses / ledsætninger. One does not need to
+      memorize these, because a sentence starting with these words will need
+      more context, thus they cannot stand alone, making them subordinate
+      clauses.
+    </p>
+
+    <div class="italic">
+      <div>at</div>
+      <div>om</div>
+      <div>da</div>
+      <div>når</div>
+      <div>dengang</div>
+      <div>fordi</div>
+      <div>før</div>
+      <div>inden</div>
+      <div>hvis</div>
+      <div>imens</div>
+      <div>selv om</div>
+      <div>så*</div>
+      <div>hv-ord (hvor, hvorfor etc)</div>
+    </div>
+    <p>
+      * with the meaning of "so that" only, see
+      <a
+        href={`${import.meta.env.BASE_URL}/Structure of sentences/4. Tricky cases`}
+        >Tricky cases</a
+      >
+    </p>
+    <Sentences client:only="react" sentences={subordinateExamples} />
+  </Section>
+</Layout>

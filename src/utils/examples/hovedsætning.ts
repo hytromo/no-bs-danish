@@ -137,7 +137,7 @@ export const firstFormExamples: SentencesType = [
       bottomColor: COLORS["Object"],
     },
     {
-      danish: "med hans venner",
+      danish: "med sine venner",
       explanation: "with his friends",
     },
   ],
@@ -218,7 +218,7 @@ export const secondFormExamples: SentencesType = [
       explanation: "Fortunately",
     },
     {
-      danish: "vundet",
+      danish: "vandt",
       explanation: "won",
       bottomExplanation: "Verb" as const,
       bottomColor: COLORS["Verb"],

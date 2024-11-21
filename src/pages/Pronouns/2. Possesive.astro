@@ -1,0 +1,93 @@
+---
+import Section from "../../components/Section/Section.astro";
+import Sentences from "../../components/Sentence/Sentences";
+import Layout from "../../layouts/Layout.astro";
+import Table from "../../components/Table.astro";
+import {
+  tVsnWordsExamples,
+  genericExamples,
+  pluralWordsExamples,
+  subjectExamples,
+} from "../../utils/examples/possesive-pronominer";
+import { COLORS } from "../../utils/fixedColors";
+---
+
+<Layout
+  title={{
+    text: "Possesive Pronouns",
+    tooltip: "Possesive Pronominer",
+  }}
+>
+  <Section title="Show who owns what.">
+    <Table>
+      <thead>
+        <tr>
+          <th>Danish</th>
+          <th>Translation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class={COLORS.Important.class}> min/mit/mine </td>
+          <td class={COLORS.Secondary.class}> my </td>
+        </tr>
+
+        <tr>
+          <td class={COLORS.Important.class}> din/dit/dine </td>
+          <td class={COLORS.Secondary.class}> your </td>
+        </tr>
+
+        <tr>
+          <td class={COLORS.Important.class}> hans </td>
+          <td class={COLORS.Secondary.class}> his </td>
+        </tr>
+
+        <tr>
+          <td class={COLORS.Important.class}> hendes </td>
+          <td class={COLORS.Secondary.class}> her </td>
+        </tr>
+
+        <tr>
+          <td class={COLORS.Important.class}> sin/sit/sine </td>
+          <td class={COLORS.Secondary.class}> her/his (matches subject) </td>
+        </tr>
+
+        <tr>
+          <td class={COLORS.Important.class}>vores</td>
+          <td class={COLORS.Secondary.class}>our</td>
+        </tr>
+
+        <tr>
+          <td class={COLORS.Important.class}>jeres</td>
+          <td class={COLORS.Secondary.class}>your</td>
+        </tr>
+
+        <tr>
+          <td class={COLORS.Important.class}>deres</td>
+          <td class={COLORS.Secondary.class}>their</td>
+        </tr>
+      </tbody>
+    </Table>
+    <Sentences client:only="react" sentences={genericExamples} />
+
+    <div class="divider mb-10"></div>
+
+    <p>
+      As shown in the table, there are possesive pronouns that change form if an
+      n-word, t-word or plural word follows.
+    </p>
+
+    <Sentences
+      client:only="react"
+      sentences={[...tVsnWordsExamples, ...pluralWordsExamples]}
+    />
+
+    <div class="divider mb-10"></div>
+    <p>
+      The sin/sit/sine pronouns are used to clarify that we are talking about
+      the subject
+    </p>
+
+    <Sentences client:only="react" sentences={subjectExamples} />
+  </Section>
+</Layout>

@@ -1,0 +1,104 @@
+---
+import Section from "../../components/Section/Section.astro";
+import Table from "../../components/Table.astro";
+import Layout from "../../layouts/Layout.astro";
+import { COLORS } from "../../utils/fixedColors";
+---
+
+<Layout
+  title={{
+    text: "Reflexive Pronouns",
+    tooltip: "Refleksive Pronominer",
+  }}
+>
+  <Section title="Myself, yourself etc">
+    <Table>
+      <thead>
+        <tr>
+          <th>Danish</th>
+          <th>Translation</th>
+        </tr>
+        <tbody>
+          <tr>
+            <td>
+              Jeg ser <span class={COLORS.Important.class}>mig</span> i spejlet
+            </td>
+            <td
+              >I see <span class={COLORS.Secondary.class}>myself</span> in the mirror</td
+            >
+          </tr>
+
+          <tr>
+            <td>
+              Du ser <span class={COLORS.Important.class}>dig</span> i spejlet
+            </td>
+            <td
+              >You see <span class={COLORS.Secondary.class}>yourself</span> in the
+              mirror</td
+            >
+          </tr>
+
+          <tr>
+            <td>
+              Han ser <span class={COLORS.Important.class}>sig</span> i spejlet
+            </td>
+            <td
+              >He sees <span class={COLORS.Secondary.class}>himself</span> in the
+              mirror</td
+            >
+          </tr>
+
+          <tr>
+            <td>
+              Hun ser <span class={COLORS.Important.class}>sig</span> i spejlet
+            </td>
+            <td
+              >She sees <span class={COLORS.Secondary.class}>herself</span> in the
+              mirror</td
+            >
+          </tr>
+
+          <tr>
+            <td>
+              Den/Det ser <span class={COLORS.Important.class}>sig</span> i spejlet
+            </td>
+            <td
+              >It sees <span class={COLORS.Secondary.class}>itself</span> in the
+              mirror</td
+            >
+          </tr>
+
+          <tr>
+            <td>
+              Vi ser <span class={COLORS.Important.class}>os</span> i spejlet
+            </td>
+            <td
+              >We see <span class={COLORS.Secondary.class}>ourselves</span> in the
+              mirror</td
+            >
+          </tr>
+
+          <tr>
+            <td>
+              I ser <span class={COLORS.Important.class}>jer</span> i spejlet
+            </td>
+            <td
+              >You see <span class={COLORS.Secondary.class}>yourselves</span> in
+              the mirror</td
+            >
+          </tr>
+
+          <tr>
+            <td>
+              De ser <span class={COLORS.Important.class}>sig</span> i spejlet
+            </td>
+            <td
+              >They see <span class={COLORS.Secondary.class}>themselves</span>
+              in the mirror</td
+            >
+          </tr>
+        </tbody>
+      </thead>
+    </Table>
+  </Section>
+</Layout>

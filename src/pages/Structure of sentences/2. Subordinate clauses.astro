@@ -1,0 +1,31 @@
+---
+import Section from "../../components/Section/Section.astro";
+import Sentences from "../../components/Sentence/Sentences.tsx";
+import Layout from "../../layouts/Layout.astro";
+import {
+  genericExamples,
+  onlyFormExamples,
+} from "../../utils/examples/ledsætning";
+import { COLORS } from "../../utils/fixedColors";
+---
+
+<Layout
+  title={{
+    text: "Subordinate clauses",
+    tooltip: "Ledsætninger",
+  }}
+>
+  <Section title="A sentence that cannot stand alone and make sense.">
+    <Sentences client:only="react" sentences={genericExamples} />
+  </Section>
+  <Section title="1st and only form:">
+    <h3>
+      <span class={COLORS.Subject.class}>Subject</span>
+      <span class={COLORS.Adverb.class}>(Adverb)</span> -
+      <span class={COLORS.Verb.class}>Verb</span>
+      <span class={COLORS.Object.class}>Object</span>
+    </h3>
+
+    <Sentences client:only="react" sentences={onlyFormExamples} />
+  </Section>
+</Layout>

@@ -1,208 +1,183 @@
 ---
 import Sentences from "../../components/Sentence/Sentences";
+import Section from "../../components/Section/Section.astro";
 import Tooltip from "../../components/Tooltip.astro";
+import Table from "../../components/Table.astro";
 import Layout from "../../layouts/Layout.astro";
-import {
-    genericExamples,
-    firstFormExamples,
-    secondFormExamples,
-    secondFormExamplesStartWithSentence,
-    notAloneExamples,
-} from "../../utils/examples/hovedsætning";
 import { COLORS } from "../../utils/fixedColors";
 ---
 
 <Layout
-    title={{
-        text: "Singular & Plural",
-        tooltip: "Ental & Flertal",
-    }}
+  title={{
+    text: "Singular & Plural",
+    tooltip: "Ental & Flertal",
+  }}
 >
-    <div>
-        <article class="prose max-w-none mb-10 text-center">
-            <h2>Suffixes to show plural</h2>
-            <p class="mb-8">
-                <span class="font-bold">-er</span> is the most common suffix
-            </p>
-            <Sentences
-                client:only="react"
-                sentences={[
-                    [
-                        { danish: "Jeg", explanation: "I" },
-                        { danish: "bruger", explanation: "use" },
-                        {
-                            danish: "bil",
-                            explanation: "car",
-                        },
-                        {
-                            danish: "-er",
-                            explanation: "-s",
-                            bottomExplanation: "plural suffix",
-                            bottomColor: COLORS.Important,
-                        },
-                    ],
-                    [
-                        { danish: "Jeg", explanation: "I" },
-                        { danish: "kan lide", explanation: "like" },
-                        {
-                            danish: "biler",
-                            explanation: "cars",
-                            bottomExplanation: "plural",
-                            bottomColor: COLORS.Important,
-                        },
-                    ],
-                ]}
-            />
-            <p class="mb-8">
-                <span class="font-bold">-e</span> is also used in some words
-            </p>
-            <Sentences
-                client:only="react"
-                sentences={[
-                    [
-                        { danish: "Jeg", explanation: "I" },
-                        { danish: "bruger", explanation: "use" },
-                        {
-                            danish: "bord",
-                            explanation: "table",
-                        },
-                        {
-                            danish: "-e",
-                            explanation: "-s",
-                            bottomExplanation: "plural suffix",
-                            bottomColor: COLORS.Important,
-                        },
-                    ],
-                    [
-                        { danish: "Jeg", explanation: "I" },
-                        { danish: "kan lide", explanation: "like" },
-                        {
-                            danish: "borde",
-                            explanation: "tables",
-                            bottomExplanation: "plural",
-                            bottomColor: COLORS.Important,
-                        },
-                    ],
-                ]}
-            />
-            <p class="mb-8">
-                Some words are <span class="font-bold"
-                    >the same in plural and singular
-                </span>
-            </p>
-            <Sentences
-                client:only="react"
-                sentences={[
-                    [
-                        {
-                            danish: "Jeg kender ikke dette",
-                            explanation: "I don't know this",
-                        },
-                        {
-                            danish: "ord",
-                            explanation: "word",
-                            bottomExplanation: "singular",
-                            bottomColor: COLORS.Important,
-                        },
-                    ],
-                    [
-                        { danish: "Disse", explanation: "These" },
-                        {
-                            danish: "ord",
-                            explanation: "words",
+  <Section title="Suffixes to show plural">
+    <p class="mb-8">
+      <span class="font-bold">-er</span> is the most common suffix
+    </p>
+    <Sentences
+      client:only="react"
+      sentences={[
+        [
+          { danish: "Jeg", explanation: "I" },
+          { danish: "bruger", explanation: "use" },
+          {
+            danish: "bil",
+            explanation: "car",
+          },
+          {
+            danish: "-er",
+            explanation: "-s",
+            bottomExplanation: "plural suffix",
+            bottomColor: COLORS.Important,
+          },
+        ],
+        [
+          { danish: "Jeg", explanation: "I" },
+          { danish: "kan lide", explanation: "like" },
+          {
+            danish: "biler",
+            explanation: "cars",
+            bottomExplanation: "plural",
+            bottomColor: COLORS.Important,
+          },
+        ],
+      ]}
+    />
+    <p class="mb-8">
+      <span class="font-bold">-e</span> is also used in some words
+    </p>
+    <Sentences
+      client:only="react"
+      sentences={[
+        [
+          { danish: "Jeg", explanation: "I" },
+          { danish: "bruger", explanation: "use" },
+          {
+            danish: "bord",
+            explanation: "table",
+          },
+          {
+            danish: "-e",
+            explanation: "-s",
+            bottomExplanation: "plural suffix",
+            bottomColor: COLORS.Important,
+          },
+        ],
+        [
+          { danish: "Jeg", explanation: "I" },
+          { danish: "kan lide", explanation: "like" },
+          {
+            danish: "borde",
+            explanation: "tables",
+            bottomExplanation: "plural",
+            bottomColor: COLORS.Important,
+          },
+        ],
+      ]}
+    />
+    <p class="mb-8">
+      Some words are <span class="font-bold"
+        >the same in plural and singular
+      </span>
+    </p>
+    <Sentences
+      client:only="react"
+      sentences={[
+        [
+          {
+            danish: "Jeg kender ikke dette",
+            explanation: "I don't know this",
+          },
+          {
+            danish: "ord",
+            explanation: "word",
+            bottomExplanation: "singular",
+            bottomColor: COLORS.Important,
+          },
+        ],
+        [
+          { danish: "Disse", explanation: "These" },
+          {
+            danish: "ord",
+            explanation: "words",
 
-                            bottomExplanation: "plural",
-                            bottomColor: COLORS.Important,
-                        },
-                        {
-                            danish: "er svære",
-                            explanation: "are difficult",
-                        },
-                    ],
-                ]}
-            />
-            <div class="divider mb-10"></div>
-            <h2>Specific form with plural</h2>
-            <p class="mb-8">
-                Nouns <span class="font-bold">forget their gender</span> when we
-                pluralize them in their specific form (bestemt form), so the suffixes
-                are the same.
-            </p>
+            bottomExplanation: "plural",
+            bottomColor: COLORS.Important,
+          },
+          {
+            danish: "er svære",
+            explanation: "are difficult",
+          },
+        ],
+      ]}
+    />
+  </Section>
 
-            <div class="flex justify-center mb-8">
-                <table class="prose-table max-w-4xl text-lg">
-                    <thead>
-                        <tr>
-                            <th>
-                                <Tooltip tooltip="Ental">Singular</Tooltip>
-                            </th>
-                            <th></th>
-                            <th>
-                                <Tooltip tooltip="Flertal">Plural</Tooltip>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th
-                                ><Tooltip tooltip="Ubestemt form"
-                                    >Non-specific form</Tooltip
-                                >
-                            </th>
-                            <th
-                                ><Tooltip tooltip="Bestemt form"
-                                    >Specific form</Tooltip
-                                >
-                            </th>
-                            <th
-                                ><Tooltip tooltip="Ubestemt form"
-                                    >Non-specific form</Tooltip
-                                >
-                            </th>
-                            <th
-                                ><Tooltip tooltip="Bestemt form"
-                                    >Specific form</Tooltip
-                                >
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                e<span class="font-bold text-xl">n</span> bil
-                            </td>
-                            <td>
-                                bile<span class="font-bold text-xl">n</span>
-                            </td>
+  <Section title="Specific form with plural">
+    <p class="mb-8">
+      Nouns <span class="font-bold">forget their gender</span> when we pluralize
+      them in their specific form (bestemt form), so the suffixes are the same.
+    </p>
 
-                            <td> bil<span class="font-bold text-xl">er</span> </td>
-                            <td
-                                >biler<span class="font-bold text-xl">ne</span>
-                            </td>
-                        </tr>
+    <Table>
+      <thead>
+        <tr>
+          <th>
+            <Tooltip tooltip="Ental">Singular</Tooltip>
+          </th>
+          <th></th>
+          <th>
+            <Tooltip tooltip="Flertal">Plural</Tooltip>
+          </th>
+        </tr>
+        <tr>
+          <th><Tooltip tooltip="Ubestemt form">Non-specific form</Tooltip> </th>
+          <th><Tooltip tooltip="Bestemt form">Specific form</Tooltip> </th>
+          <th><Tooltip tooltip="Ubestemt form">Non-specific form</Tooltip> </th>
+          <th><Tooltip tooltip="Bestemt form">Specific form</Tooltip> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            e<span class="font-bold text-xl">n</span> bil
+          </td>
+          <td>
+            bile<span class="font-bold text-xl">n</span>
+          </td>
 
-                        <tr>
-                            <td>
-                                e<span class="font-bold text-xl">t</span> bord
-                            </td>
-                            <td>
-                                borde<span class="font-bold text-xl">t</span>
-                            </td>
-                            <td> bord<span class="font-bold text-xl">e</span>  </td>
-                            <td>
-                                borde<span class="font-bold text-xl">ne</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                e<span class="font-bold text-xl">t</span> år
-                            </td>
-                            <td>åre<span class="font-bold text-xl">t</span></td>
-                            <td>år</td>
-                            <td>år<span class="font-bold text-xl">ene</span></td
-                            >
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </article>
-    </div>
+          <td>
+            bil<span class="font-bold text-xl">er</span>
+          </td>
+          <td>biler<span class="font-bold text-xl">ne</span> </td>
+        </tr>
+
+        <tr>
+          <td>
+            e<span class="font-bold text-xl">t</span> bord
+          </td>
+          <td>
+            borde<span class="font-bold text-xl">t</span>
+          </td>
+          <td>
+            bord<span class="font-bold text-xl">e</span>
+          </td>
+          <td>
+            borde<span class="font-bold text-xl">ne</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            e<span class="font-bold text-xl">t</span> år
+          </td>
+          <td>åre<span class="font-bold text-xl">t</span></td>
+          <td>år</td>
+          <td>år<span class="font-bold text-xl">ene</span></td>
+        </tr>
+      </tbody>
+    </Table>
+  </Section>
 </Layout>

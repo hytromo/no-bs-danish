@@ -140,7 +140,7 @@ export const degreesExamples: SentencesType = [
       explanation: "The",
     },
     {
-      danish: "størst",
+      danish: "største",
       explanation: "biggest",
       bottomExplanation: "superlative form",
       bottomColor: COLORS.Important,

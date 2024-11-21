@@ -1,0 +1,49 @@
+---
+import type { NestedPages } from "./Drawer.astro";
+
+interface Props {
+  parent: string;
+  children: NestedPages | null;
+  fullPath: string;
+}
+
+const { parent, children, fullPath } = Astro.props;
+const hasChildren = children && Object.keys(children).length > 0;
+let decodedURI = decodeURI(Astro.url.pathname);
+
+if (decodedURI.endsWith('/')) {
+    decodedURI = decodedURI.slice(0, -1);
+}
+
+const _fullPath = fullPath.endsWith('/') ? fullPath.slice(0, -1) : fullPath;
+
+const isActivePath = !hasChildren && decodedURI === _fullPath;
+
+---
+{
+  hasChildren && (
+    <li>
+      <details open>
+        <summary>{parent}</summary>
+        <ul>
+          {Object.entries(children).map(([child, grandChildren]) => (
+            <Astro.self
+              parent={child}
+              children={grandChildren}
+              fullPath={`${fullPath}/${child}`}
+            />
+          ))}
+        </ul>
+      </details>
+    </li>
+  )
+}
+{
+  !hasChildren && parent !== "" && (
+    <li>
+      <a class={isActivePath ? "active" : ""} href={fullPath}>
+        {parent.split(". ").slice(1).join("") || "Home"}
+      </a>
+    </li>
+  )
+}

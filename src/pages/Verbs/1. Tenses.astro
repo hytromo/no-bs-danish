@@ -1,212 +1,172 @@
 ---
+import Section from "../../components/Section/Section.astro";
 import Sentences from "../../components/Sentence/Sentences";
 import Tooltip from "../../components/Tooltip.astro";
+import Table from "../../components/Table.astro";
 import Layout from "../../layouts/Layout.astro";
 import {
-    infinitivExamples,
-    nutidExamples,
-    datidExamples,
-    fornutidExamples,
-    fordatidExamples,
-    imperativExamples,
+  infinitivExamples,
+  nutidExamples,
+  datidExamples,
+  fornutidExamples,
+  fordatidExamples,
+  imperativExamples,
 } from "../../utils/examples/tenses";
-import { COLORS } from "../../utils/fixedColors";
 ---
 
 <Layout
-    title={{
-        text: "Tenses",
-        tooltip: "Bøjning",
-    }}
+  title={{
+    text: "Tenses",
+    tooltip: "Bøjning",
+  }}
 >
-    <div>
-        <article class="prose max-w-none text-center mb-10">
-            <p>
-                There are 3 ways that verbs are inflected. There is <span
-                    class="font-bold">no way</span
-                > to know beforehand which verb belongs to which group.
-            </p>
-            <div class="divider mb-10"></div>
-            <h3>Group 1</h3>
-            <div class="flex justify-center mb-7">
-                <table class="prose-table max-w-3xl text-lg">
-                    <thead>
-                        <tr>
-                            <th>Infinitiv</th>
-                            <th>Nutid</th>
-                            <th>Datid</th>
-                            <th>Førnutid</th>
-                            <th>Førdatid</th>
-                            <th>Imperativ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td
-                                ><Tooltip tooltip="to call">at ringe</Tooltip
-                                ></td
-                            >
-                            <td><Tooltip tooltip="call">ringer</Tooltip></td>
-                            <td
-                                ><Tooltip tooltip="called"
-                                    >ring<span class="font-bold text-xl"
-                                        >ede</span
-                                    ></Tooltip
-                                ></td
-                            >
-                            <td
-                                ><Tooltip tooltip="have called"
-                                    >har ringe<span class="font-bold text-xl"
-                                        >t</span
-                                    ></Tooltip
-                                ></td
-                            >
-                            <td
-                                ><Tooltip tooltip="had called"
-                                    >havde ringe<span class="font-bold text-xl"
-                                        >t</span
-                                    ></Tooltip
-                                ></td
-                            >
-                            <td><Tooltip tooltip="call!">ring</Tooltip></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+  <Section title="3 ways that verbs are inflected">
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      There is <span class="font-bold">no way</span> to know beforehand which verb
+      belongs to which group.
+    </p>
+  </Section>
+  <Section title="Group 1">
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+          <th>Imperativ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to call">at ringe</Tooltip></td>
+          <td><Tooltip tooltip="call">ringer</Tooltip></td>
+          <td
+            ><Tooltip tooltip="called"
+              >ring<span class="font-bold text-xl">ede</span></Tooltip
+            ></td
+          >
+          <td
+            ><Tooltip tooltip="have called"
+              >har ringe<span class="font-bold text-xl">t</span></Tooltip
+            ></td
+          >
+          <td
+            ><Tooltip tooltip="had called"
+              >havde ringe<span class="font-bold text-xl">t</span></Tooltip
+            ></td
+          >
+          <td><Tooltip tooltip="call!">ring</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
+  </Section>
+  <Section title="Group 2">
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+          <th>Imperativ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to read">at læase</Tooltip></td>
+          <td><Tooltip tooltip="read">læser</Tooltip></td>
+          <td
+            ><Tooltip tooltip="read (past)"
+              >læs<span class="font-bold text-xl">te</span></Tooltip
+            ></td
+          >
+          <td
+            ><Tooltip tooltip="have read"
+              >har læs<span class="font-bold text-xl">t</span></Tooltip
+            ></td
+          >
+          <td
+            ><Tooltip tooltip="had read"
+              >havde læs<span class="font-bold text-xl">t</span></Tooltip
+            ></td
+          >
+          <td><Tooltip tooltip="read!">læse</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
+  </Section>
 
-            <div class="divider mb-10"></div>
-            <h3>Group 2</h3>
-            <div class="flex justify-center mb-7">
-                <table class="prose-table max-w-3xl text-lg">
-                    <thead>
-                        <tr>
-                            <th>Infinitiv</th>
-                            <th>Nutid</th>
-                            <th>Datid</th>
-                            <th>Førnutid</th>
-                            <th>Førdatid</th>
-                            <th>Imperativ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td
-                                ><Tooltip tooltip="to read">at læase</Tooltip
-                                ></td
-                            >
-                            <td><Tooltip tooltip="read">læser</Tooltip></td>
-                            <td
-                                ><Tooltip tooltip="read (past)"
-                                    >læs<span class="font-bold text-xl">te</span
-                                    ></Tooltip
-                                ></td
-                            >
-                            <td
-                                ><Tooltip tooltip="have read"
-                                    >har læs<span class="font-bold text-xl"
-                                        >t</span
-                                    ></Tooltip
-                                ></td
-                            >
-                            <td
-                                ><Tooltip tooltip="had read"
-                                    >havde læs<span class="font-bold text-xl"
-                                        >t</span
-                                    ></Tooltip
-                                ></td
-                            >
-                            <td><Tooltip tooltip="read!">læse</Tooltip></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+  <Section title="Group 3 - irregular">
+    <Table>
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Nutid</th>
+          <th>Datid</th>
+          <th>Førnutid</th>
+          <th>Førdatid</th>
+          <th>Imperativ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Tooltip tooltip="to be">at være</Tooltip></td>
+          <td><Tooltip tooltip="is">er</Tooltip></td>
+          <td><Tooltip tooltip="was">var</Tooltip></td>
+          <td><Tooltip tooltip="have been">været</Tooltip></td>
+          <td><Tooltip tooltip="had been">havde været</Tooltip></td>
+          <td><Tooltip tooltip="be!">vær</Tooltip></td>
+        </tr>
+      </tbody>
+    </Table>
+  </Section>
 
-            <div class="divider mb-10"></div>
-            <h3>Group 3 - irregular</h3>
-            <div class="flex justify-center mb-7">
-                <table class="prose-table max-w-3xl text-lg">
-                    <thead>
-                        <tr>
-                            <th>Infinitiv</th>
-                            <th>Nutid</th>
-                            <th>Datid</th>
-                            <th>Førnutid</th>
-                            <th>Førdatid</th>
-                            <th>Imperativ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><Tooltip tooltip="to be">at være</Tooltip></td>
-                            <td><Tooltip tooltip="is">er</Tooltip></td>
-                            <td><Tooltip tooltip="was">var</Tooltip></td>
-                            <td><Tooltip tooltip="have been">været</Tooltip></td
-                            >
-                            <td
-                                ><Tooltip tooltip="had been"
-                                    >havde været</Tooltip
-                                ></td
-                            >
-                            <td><Tooltip tooltip="be!">vær</Tooltip></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+  <Section title="Tenses" />
+  <Section title="Infinitiv">
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Used to describe the verb in its basic form. In Danish, the infinitive is
+      preceded by the word "at" <span class="font-bold">or</span> is used after modal
+      verbs.
+    </p>
+    <Sentences client:only="react" sentences={infinitivExamples} />
+  </Section>
+  <Section title="Nutid">
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Used to describe actions that are happening right now, or are happening
+      regularly or are true in general. It is also used to speak about the
+      future depending on the context.
+    </p>
+    <Sentences client:only="react" sentences={nutidExamples} />
+  </Section>
+  <Section title="Datid">
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Used to describe actions that happened in a specific known time in the
+      past.
+    </p>
+    <Sentences client:only="react" sentences={datidExamples} />
+  </Section>
 
-            <div class="divider mb-10"></div>
-            <div class="divider mb-10"></div>
-
-            <h2>Tenses</h2>
-            <div class="divider mb-10"></div>
-            <h3>
-                <Tooltip tooltip="Infinitive">Infinitiv</Tooltip>
-            </h3>
-            <p>
-                Used to describe the verb in its basic form. In Danish, the
-                infinitive is preceded by the word "at" or is used after modal
-                verbs.
-            </p>
-            <Sentences client:only="react" sentences={infinitivExamples} />
-            <div class="divider mb-10"></div>
-            <h3>
-                <Tooltip tooltip="Present">Nutid</Tooltip>
-            </h3>
-            <p>
-                Used to describe actions that are happening right now, or are
-                happening regularly or are true in general. It is also used to
-                speak about the future according to the context.
-            </p>
-            <Sentences client:only="react" sentences={nutidExamples} />
-            <div class="divider mb-10"></div>
-            <h3>
-                <Tooltip tooltip="Past">Datid</Tooltip>
-            </h3>
-            <p>Used to describe actions that happened in the past.</p>
-            <Sentences client:only="react" sentences={datidExamples} />
-            <div class="divider mb-10"></div>
-            <h3>
-                <Tooltip tooltip="Present perfect">Førnutid</Tooltip>
-            </h3>
-            <p>
-                Used to describe actions that have been completed in the past
-                and have a connection to the present.
-            </p>
-            <Sentences client:only="react" sentences={fornutidExamples} />
-            <div class="divider mb-10"></div>
-            <h3>
-                <Tooltip tooltip="Past perfect">Førdatid</Tooltip>
-            </h3>
-            <p>
-                Used to describe actions that have been completed in the past
-                and have a connection to another past event.
-            </p>
-            <Sentences client:only="react" sentences={fordatidExamples} />
-            <div class="divider mb-10"></div>
-            <h3>
-                <Tooltip tooltip="Imperative">Imperativ</Tooltip>
-            </h3>
-            <p>Used to give commands or orders.</p>
-            <Sentences client:only="react" sentences={imperativExamples} />
-        </article>
-    </div>
+  <Section title="Førnutid">
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Used to describe actions that have been completed in the past and have a
+      connection to the present.
+    </p>
+    <Sentences client:only="react" sentences={fornutidExamples} />
+  </Section>
+  <Section title="Førdatid">
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Used to describe actions that have been completed in the past and happened
+      before another past event.
+    </p>
+    <Sentences client:only="react" sentences={fordatidExamples} />
+  </Section>
+  <Section title="Imperativ">
+    <p class="max-w-2xl mx-auto text-justify hyphens-auto">
+      Used to give commands or orders.
+    </p>
+    <Sentences client:only="react" sentences={imperativExamples} />
+  </Section>
 </Layout>

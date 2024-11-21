@@ -36,8 +36,6 @@ export const genericExamples: SentencesType = [
   ],
 ];
 
-// let's describe the ledsætninger with each word individually, and then have the main clauses in a single object altogether, in order to focus
-// on the structure of the subordinate clauses:
 export const onlyFormExamples: SentencesType = [
   [
     {
@@ -63,7 +61,7 @@ export const onlyFormExamples: SentencesType = [
       bottomColor: COLORS.Object,
     },
     {
-      danish: "min mor ringede til mig.",
+      danish: "ringede min mor til mig.",
       explanation: "my mother called me.",
       bottomExplanation: "Main clause",
       bottomColor: COLORS.MainClause,
@@ -72,7 +70,7 @@ export const onlyFormExamples: SentencesType = [
   [
     {
       danish: "Selvom",
-      explanation: "When",
+      explanation: "Although",
     },
     {
       danish: "jeg",
@@ -99,11 +97,16 @@ export const onlyFormExamples: SentencesType = [
       bottomColor: COLORS.MainClause,
     },
   ],
-  // let's repeat the above but also include an adverb in-between:
   [
     {
-      danish: "Før",
+      danish: "Før i tiden",
       explanation: "Before",
+    },
+    {
+      danish: "var",
+      explanation: "was",
+      bottomExplanation: "Verb",
+      bottomColor: COLORS.Verb,
     },
     {
       danish: "jeg",
@@ -116,12 +119,6 @@ export const onlyFormExamples: SentencesType = [
       explanation: "always",
       bottomExplanation: "Adverb",
       bottomColor: COLORS.Adverb,
-    },
-    {
-      danish: "var",
-      explanation: "was",
-      bottomExplanation: "Verb",
-      bottomColor: COLORS.Verb,
     },
     {
       danish: "sulten,",

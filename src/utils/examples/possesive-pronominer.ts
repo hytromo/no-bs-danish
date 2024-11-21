@@ -32,7 +32,7 @@ export const genericExamples: SentencesType = [
   ],
   [
     {
-      danish: "Morten og Henrik elsker at spiller med",
+      danish: "Morten og Henrik elsker at spille med",
       explanation: "Morten and Henrik love to play with",
     },
     {
@@ -61,7 +61,7 @@ export const tVsnWordsExamples: SentencesType = [
       bottomColor: COLORS.NWord,
     },
     {
-      danish: "stole",
+      danish: "stol",
       explanation: "chair",
     },
   ],
@@ -86,8 +86,8 @@ export const tVsnWordsExamples: SentencesType = [
 export const pluralWordsExamples: SentencesType = [
   [
     {
-      danish: "Denne er",
-      explanation: "This is",
+      danish: "Disse er",
+      explanation: "These are",
     },
     {
       danish: "mine/dine",
