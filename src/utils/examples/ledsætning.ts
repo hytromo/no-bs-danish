@@ -99,14 +99,8 @@ export const onlyFormExamples: SentencesType = [
   ],
   [
     {
-      danish: "Før i tiden",
-      explanation: "Before",
-    },
-    {
-      danish: "var",
-      explanation: "was",
-      bottomExplanation: "Verb",
-      bottomColor: COLORS.Verb,
+      danish: "Selvom",
+      explanation: "Although",
     },
     {
       danish: "jeg",
@@ -121,14 +115,20 @@ export const onlyFormExamples: SentencesType = [
       bottomColor: COLORS.Adverb,
     },
     {
+      danish: "var",
+      explanation: "was",
+      bottomExplanation: "Verb",
+      bottomColor: COLORS.Verb,
+    },
+    {
       danish: "sulten,",
       explanation: "hungry,",
       bottomExplanation: "Adjective",
       bottomColor: COLORS.Adjective,
     },
     {
-      danish: "men nu har jeg altid en snack med mig.",
-      explanation: "but now I always have a snack with me.",
+      danish: "klagede jeg aldrig.",
+      explanation: "I never complained.",
       bottomExplanation: "Main clause",
       bottomColor: COLORS.MainClause,
     },
